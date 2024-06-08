@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-one: #493d13;
+  --color-two: #492d13;
+  --color-three: #f29c52;
+  --color-four: #8b8580;
+  --color-five: #fff5ed;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: rgba(0, 0, 0, 0.2)
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
