@@ -110,3 +110,4 @@ export const items: BakeryItems[] = [
     priceOld: 3000
   },
 ]
+

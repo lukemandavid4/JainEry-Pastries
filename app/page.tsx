@@ -14,7 +14,7 @@ export default function Home() {
         <div className="flex flex-col gap-[1.5rem] w-[40%]">
           <h1 className="text-[var(--color-three)] text-[1.875rem] font-medium">Get 80% discount</h1>
           <p className="text-[var(--color-two)] text-[8.625rem] font-extrabold leading-[8.125rem]">Fresh Bakery Foods.</p>
-          <Link href='/shop' className="bg-[var(--color-three)] flex max-w-[12rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)]">
+          <Link href='/shop' className="bg-[var(--color-three)] flex max-w-[12rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s]">
             <span className="text-[1.125rem] font-medium">Shop Now</span>
             <FaArrowRightLong className="text-[1.125rem] font-bold"/>
           </Link>
@@ -63,7 +63,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="py-[7.5rem] bg-[var(--color-five)] px-lr-custom">
+      <div className="py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-lr-custom">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST PRODUCTS</span>
         </div>
@@ -76,16 +76,47 @@ export default function Home() {
               <Link href={product.href}>
                 <Image src={product.image} width={150} height={100} alt="croissant"></Image>
               </Link>
-              <div className="mt-[2.5rem] text-center group-hover:opacity-0 transition-opacity duration-300 group-hover:pointer-events-none">
+              <div className="mt-[2.5rem] text-center group-hover:opacity-0 [transition:opacity_0.3s] group-hover:pointer-events-none">
                 <span className="text-[1.2rem] text-[var(--color-one)] font-semibold">{product.name}</span>
                 <div className="flex justify-between gap-[1rem]">
                   <span className="text-[1.2rem] font-medium text-[--color-three]">Ksh.{product.priceNew}</span>
                   <span className="text-[var(--color-six)] text-[1.2rem] line-through font-medium">Ksh.{product.priceOld}</span>
+                </div>
               </div>
-              <Link href='' className="bg-[var(--color-three)] text-[var(--color-white)] w-[10rem] py-[0.5rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s] bottom-0 left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto transition-opacity duration-300">Add to Cart</Link>
+              <Link href='' className="flex justify-center bg-[var(--color-three)] text-[var(--color-white)] w-[10rem] py-[0.5rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto">Add to Cart</Link>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="h-[26.5rem] bg-[var(--color-five)] px-lr-custom flex gap-[4rem]">
+        <Image src='/home/banner.png' width={550} height={100} alt="banner"></Image>
+        <div className="flex flex-col justify-center">
+          <h1 className="text-[1.875rem] text-[var(--color-three)] font-semibold">Offer For Customer.</h1>
+          <p className="text-[3.75rem] text-[--color-one] font-bold">All Products <span className="text-[var(--color-three)] underline">80%</span> Discount.</p>
+          <Link href='/shop' className="bg-[var(--color-three)] flex max-w-[12rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s]">
+              <span className="text-[1.125rem] font-medium">Shop Now</span>
+              <FaArrowRightLong className="text-[1.125rem] font-bold"/>
+          </Link>
+        </div>
+      </div>
+      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-lr-custom py-[7.5rem]">
+        <div className="text-center">
+          <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST BLOG POST</span>
+        </div>
+        <div className="text-center mt-[2rem]">
+          <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Latest News & Article</h1>
+        </div>
+        <div className="mt-[5rem]">
+          <div className="w-[25rem] h-[32rem] p-[1.5rem] bg-[linear-gradient(#fff5ed,_#f9e3d0)] shadow-md rounded-[0.5rem] flex flex-col gap-[1rem]">
+            <div className="bg-[url('../public/home/one.jpg')] bg-center bg-cover w-[100%] h-[15rem] rounded-[0.5rem]"></div>
+            <h1 className="text-[var(--color-three)] font-semibold mt-[1rem]">FEBRUARY 28, 2023</h1>
+            <p className="text-[1.4rem] text-[var(--color-one)] font-semibold">Exploring the World of Bakery Items</p>
+            <div className="mt-[1rem]">
+              <Link href='' className="text-[var(--color-one)] text-[0.9rem] font-medium border-[var(--color-three)] border-[2px] border-solid px-[2rem] py-[0.8rem] rounded-[0.3rem] hover:text-[var(--color-white)] hover:bg-[var(--color-three)] [transition:background_0.3s,_color_0.3s]">READ MORE</Link>
             </div>
           </div>
-          ))}
+          <div></div>
+          <div></div>
         </div>
       </div>
     </div>
