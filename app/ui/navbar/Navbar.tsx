@@ -8,7 +8,7 @@ import clsx from 'clsx';
 const Navbar = () => {
   return (
     <>
-      <div className= 'h-[5.5rem] px-[23rem] bg-[var(--color-white)] flex items-center justify-between'>
+      <div className= 'h-[5.5rem] px-lr-custom bg-[var(--color-white)] flex items-center justify-between'>
         <div>
           <Link href='/'><Image src='/home/logo.png' width={125} height={50} alt="logo"></Image></Link>
         </div>

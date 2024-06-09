@@ -10,7 +10,10 @@ const config: Config = {
   theme: {
     extend: {
       spacing: {
-        'calc-25-minus-10': 'calc(25% - 10px)',
+        'calc-25-minus-10': 'calc(25% - 20px)',
+      },
+      padding: {
+        'lr-custom': 'max(19vw, 2rem)',
       },
     },
   },
@@ -18,7 +21,7 @@ const config: Config = {
     function ({ addUtilities }: PluginAPI) {
       addUtilities({
         '.w-calc-25-minus-10': {
-          width: 'calc(25% - 10px)',
+          width: 'calc(25% - 20px)',
         },
       });
     },

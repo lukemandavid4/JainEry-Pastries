@@ -10,7 +10,7 @@ import { items, BakeryItems } from "./ui/data/data";
 export default function Home() {
   return (
     <div className="">
-      <div className="flex px-[23rem] py-[8.25rem] h-[48.875rem] bg-[url('../public/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
+      <div className="flex px-lr-custom py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
         <div className="flex flex-col gap-[1.5rem] w-[40%]">
           <h1 className="text-[var(--color-three)] text-[1.875rem] font-medium">Get 80% discount</h1>
           <p className="text-[var(--color-two)] text-[8.625rem] font-extrabold leading-[8.125rem]">Fresh Bakery Foods.</p>
@@ -26,7 +26,7 @@ export default function Home() {
           <Image src='/home/basket.png' width={500} height={100} alt="basket"></Image>
         </div>
       </div>
-      <div className="h-[28.75rem] flex px-[23rem] items-center justify-between">
+      <div className="h-[28.75rem] flex px-lr-custom items-center justify-between">
         {data.map((item: BakeryItem) => (
           <Link key={item.id} href={item.href} className="flex flex-col gap-[1rem] items-center  border-[var(--color-five)] border-[3px] rounded-[50%] px-[3rem] py-[2rem] hover:border-dashed hover:border-[var(--color-three)] hover:bg-[--color-five] [transition:background_0.3s,_border_0.3s] group">
             <Image src={item.image} width={150} height={300} alt="switch roll"></Image>
@@ -34,12 +34,12 @@ export default function Home() {
           </Link>
         ))}
       </div>
-      <div className="h-[16.25rem] bg-[var(--color-three)] bg-[url('/home/home-background.svg')] px-[23rem] flex items-center">
+      <div className="h-[16.25rem] bg-[var(--color-three)] bg-[url('/home/home-background.svg')] px-lr-custom flex items-center">
         <div className="flex flex-col gap-[1rem] items-center [flex-basis:33.33%]">
           <div className="flex items-center justify-center outline-dashed outline-[var(--color-white)] outline-[1px] outline-offset-[0.5rem] bg-[var(--color-white)] rounded-[50%] w-[5rem] h-[5rem]">
             <TbTruckDelivery className="text-[var(--color-black)] text-[2.5rem]"/>
           </div>
-          <div className="">
+          <div>
             <h1 className="text-[var(--color-white)] text-[1.5625rem] font-bold text-center">Free Delivery</h1>
             <p className="text-[var(--color-white)] text-[1.0625rem] text-center">Enjoy complimentary shipping on all orders over Ksh. 5,000.</p>
           </div>
@@ -48,7 +48,7 @@ export default function Home() {
           <div className="flex items-center justify-center outline-dashed outline-[var(--color-white)] outline-[1px] outline-offset-[0.5rem] bg-[var(--color-white)] rounded-[50%] w-[5rem] h-[5rem]">
             <TbClock24 className="text-[var(--color-black)] text-[2.5rem]"/>
           </div>
-          <div className="">
+          <div>
             <h1 className="text-[var(--color-white)] text-[1.5625rem] font-bold text-center">24/07 Support</h1>
             <p className="text-[var(--color-white)] text-[1.0625rem] text-center">Our dedicated support team is available 24/7 to assist you.</p>
           </div>
@@ -57,31 +57,34 @@ export default function Home() {
           <div className="flex items-center justify-center outline-dashed outline-[var(--color-white)] outline-[1px] outline-offset-[0.5rem] bg-[var(--color-white)] rounded-[50%] w-[5rem] h-[5rem]">
             <RiMoneyDollarCircleLine className="text-[var(--color-black)] text-[2.5rem]"/>
           </div>
-          <div className="">
+          <div>
             <h1 className="text-[var(--color-white)] text-[1.5625rem] font-bold text-center"> Secure Payment</h1>
             <p className="text-[var(--color-white)] text-[1.0625rem] text-center">Rest assured with our secure payment system, ensuring your transactions are safe</p>
           </div>
         </div>
       </div>
-      <div className="py-[7.5rem] bg-[var(--color-five)] px-[23rem]">
+      <div className="py-[7.5rem] bg-[var(--color-five)] px-lr-custom">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST PRODUCTS</span>
         </div>
         <div className="text-center mt-[2rem]">
           <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Special Bakery Products</h1>
         </div>
-        <div className="flex mt-[5rem] flex-wrap gap-[1rem]">
+        <div className="flex mt-[5rem] flex-wrap gap-[1.5rem]">
           {items.map((product: BakeryItems) => (
-            <Link href='' key={product.id} className="flex flex-col items-center px-[3rem] py-[2rem] bg-[var(--color-white)] rounded-[0.5rem] shadow-sm hover:shadow-lg w-[25%] justify-between transition-shadow duration-300">
-              <Image src={product.image} width={150} height={100} alt="croissant"></Image>
-              <div className="mt-[2.5rem] text-center">
+            <div key={product.id} className="flex flex-col items-center py-[2rem] bg-[var(--color-white)] rounded-[0.5rem] shadow-sm hover:shadow-lg w-calc-25-minus-10 justify-between transition-shadow duration-300 relative group">
+              <Link href={product.href}>
+                <Image src={product.image} width={150} height={100} alt="croissant"></Image>
+              </Link>
+              <div className="mt-[2.5rem] text-center group-hover:opacity-0 transition-opacity duration-300 group-hover:pointer-events-none">
                 <span className="text-[1.2rem] text-[var(--color-one)] font-semibold">{product.name}</span>
                 <div className="flex justify-between gap-[1rem]">
                   <span className="text-[1.2rem] font-medium text-[--color-three]">Ksh.{product.priceNew}</span>
                   <span className="text-[var(--color-six)] text-[1.2rem] line-through font-medium">Ksh.{product.priceOld}</span>
               </div>
-              </div>
-          </Link>
+              <Link href='' className="bg-[var(--color-three)] text-[var(--color-white)] w-[10rem] py-[0.5rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s] bottom-0 left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto transition-opacity duration-300">Add to Cart</Link>
+            </div>
+          </div>
           ))}
         </div>
       </div>
