@@ -111,3 +111,29 @@ export const items: BakeryItems[] = [
   },
 ]
 
+export interface Products{
+  id: number;
+  background: string;
+  date: string;
+  content: string;
+}
+export const products: Products[] = [
+  {
+    id: 1,
+    background: '/home/one.jpg',
+    date: 'FEBRUARY 28, 2023',
+    content: 'Exploring the World of Bakery Items'
+  },
+  {
+    id: 2,
+    background: '/home/two.jpg',
+    date: 'FEBRUARY 6, 2023',
+    content: 'The Rise of Artisanal Bread A Trend Worth Trying'
+  },
+  {
+    id: 3,
+    background: '/home/three.jpg',
+    date: 'FEBRUARY 6, 2023',
+    content: 'A Behind the Scenes Look at the Kitchen'
+  }
+]

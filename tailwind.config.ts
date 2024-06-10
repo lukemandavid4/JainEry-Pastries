@@ -11,6 +11,7 @@ const config: Config = {
     extend: {
       spacing: {
         'calc-25-minus-10': 'calc(25% - 20px)',
+        'calc-33-minus-20': 'calc(33.33% - 20px)'
       },
       padding: {
         'lr-custom': 'max(19vw, 2rem)',
@@ -23,6 +24,9 @@ const config: Config = {
         '.w-calc-25-minus-10': {
           width: 'calc(25% - 20px)',
         },
+        '.w-calc-33-minus-20': {
+          width: 'calc(33.33% - 20px)'
+        }
       });
     },
   ],

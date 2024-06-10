@@ -6,6 +6,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import { TbClock24 } from "react-icons/tb";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { items, BakeryItems } from "./ui/data/data";
+import { products, Products } from "./ui/data/data";
 
 export default function Home() {
   return (
@@ -106,17 +107,36 @@ export default function Home() {
         <div className="text-center mt-[2rem]">
           <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Latest News & Article</h1>
         </div>
-        <div className="mt-[5rem]">
-          <div className="w-[25rem] h-[32rem] p-[1.5rem] bg-[linear-gradient(#fff5ed,_#f9e3d0)] shadow-md rounded-[0.5rem] flex flex-col gap-[1rem]">
-            <div className="bg-[url('../public/home/one.jpg')] bg-center bg-cover w-[100%] h-[15rem] rounded-[0.5rem]"></div>
-            <h1 className="text-[var(--color-three)] font-semibold mt-[1rem]">FEBRUARY 28, 2023</h1>
-            <p className="text-[1.4rem] text-[var(--color-one)] font-semibold">Exploring the World of Bakery Items</p>
-            <div className="mt-[1rem]">
-              <Link href='' className="text-[var(--color-one)] text-[0.9rem] font-medium border-[var(--color-three)] border-[2px] border-solid px-[2rem] py-[0.8rem] rounded-[0.3rem] hover:text-[var(--color-white)] hover:bg-[var(--color-three)] [transition:background_0.3s,_color_0.3s]">READ MORE</Link>
+        <div className="mt-[5rem] flex flex-wrap gap-[1.5rem]">
+          {products.map((product: Products) =>(
+            <div key={product.id} className="h-[32rem] p-[1.5rem] bg-[linear-gradient(#fff5ed,_#f9e3d0)] shadow-md rounded-[0.5rem] flex flex-col gap-[1rem] box-border" style={{flexBasis: 'calc(33.33% - 20px)'}}>
+              <div className="bg-center bg-cover w-[100%] h-[15rem] rounded-[0.5rem]" style={{ backgroundImage: `url(${product.background})` }}></div>
+              <h1 className="text-[var(--color-three)] font-semibold mt-[1rem]">{product.date}</h1>
+              <p className="text-[1.4rem] text-[var(--color-one)] font-semibold">{product.content}</p>
+              <div className="mt-[1rem]">
+                <Link href='' className="text-[var(--color-one)] text-[0.9rem] font-medium border-[var(--color-three)] border-[2px] border-solid px-[2rem] py-[0.8rem] rounded-[0.3rem] hover:text-[var(--color-white)] hover:bg-[var(--color-three)] [transition:background_0.3s,_color_0.3s]">READ MORE</Link>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="my-[10rem]">
+          <div className="text-center">
+            <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">BOOK RESERVATION</span>
+          </div>
+          <div className="text-center mt-[2rem]">
+            <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Book Our Reservation</h1>
+          </div>
+          <div className="h-[40rem] bg-[url('/home/book.jpg')] bg-cover bg-center w-full rounded-[0.7rem] p-[4rem] flex flex-col gap-[1rem]">
+            <div className="flex justify-between">
+              <input type="text" name="name" id="name" placeholder="Full Name:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>
+              <input type="tel" name="number" id="number" placeholder="Phone Number:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>
+              <input type="text" name="email" id="email" placeholder="Email Address:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>
+            </div>
+            <textarea name="message" id="message" cols={30} rows={10} className="resize-none w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" placeholder="Additional Message..."/>
+            <div className="flex justify-center mt-[2rem]">
+              <Link href='/contact' className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[1rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s]">Book Reservartion</Link>
             </div>
           </div>
-          <div></div>
-          <div></div>
         </div>
       </div>
     </div>
