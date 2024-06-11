@@ -15,7 +15,7 @@ export default function Home() {
         <div className="flex flex-col gap-[1.5rem] w-[40%]">
           <h1 className="text-[var(--color-three)] text-[1.875rem] font-medium">Get 80% discount</h1>
           <p className="text-[var(--color-two)] text-[8.625rem] font-extrabold leading-[8.125rem]">Fresh Bakery Foods.</p>
-          <Link href='/shop' className="bg-[var(--color-three)] flex max-w-[12rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s]">
+          <Link href='/shop' className="bg-[var(--color-three)] flex px-[3rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s] self-start">
             <span className="text-[1.125rem] font-medium">Shop Now</span>
             <FaArrowRightLong className="text-[1.125rem] font-bold"/>
           </Link>

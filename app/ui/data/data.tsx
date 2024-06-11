@@ -137,3 +137,37 @@ export const products: Products[] = [
     content: 'A Behind the Scenes Look at the Kitchen'
   }
 ]
+
+export interface People{
+  id: number;
+  image: string;
+  name: string;
+  role: string;
+}
+
+export const chefs: People[] = [
+  {
+    id: 1,
+    image: '/about/ryan.jpg',
+    name: 'Armando Ryan',
+    role: 'Founder & Ceo'
+  },
+  {
+    id: 1,
+    image: '/about/lucille.jpg',
+    name: 'Lucille Andrews',
+    role: 'Product Manager'
+  },
+  {
+    id: 1,
+    image: '/about/lloyd.jpg',
+    name: 'Nichole Lloyd',
+    role: 'Director'
+  },
+  {
+    id: 1,
+    image: '/about/duane.jpg',
+    name: 'Duane Campbell',
+    role: 'Chef Manager'
+  }
+]
