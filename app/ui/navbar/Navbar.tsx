@@ -3,7 +3,6 @@ import Image from "next/image";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdShoppingCart } from "react-icons/md";
 import { CgMenuRightAlt } from "react-icons/cg";
-import clsx from 'clsx';
 
 const Navbar = () => {
   return (

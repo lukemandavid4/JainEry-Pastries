@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import "./globals.css";
-import Layout from "./ui/navbar/layout";
+import Layout from "./ui/layout";
 const outfit = Outfit({subsets: ['latin'],});
 
 export const metadata: Metadata = {

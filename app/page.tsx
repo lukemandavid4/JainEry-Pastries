@@ -119,7 +119,7 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="my-[10rem]">
+        <div className="mt-[10rem] mb-[-11rem]">
           <div className="text-center">
             <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">BOOK RESERVATION</span>
           </div>
@@ -133,9 +133,7 @@ export default function Home() {
               <input type="text" name="email" id="email" placeholder="Email Address:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>
             </div>
             <textarea name="message" id="message" cols={30} rows={10} className="resize-none w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" placeholder="Additional Message..."/>
-            <div className="flex justify-center mt-[2rem]">
-              <Link href='/contact' className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[1rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s]">Book Reservartion</Link>
-            </div>
+            <Link href='/contact' className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[1rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s] self-center mt-[2rem]">Book Reservartion</Link>
           </div>
         </div>
       </div>
