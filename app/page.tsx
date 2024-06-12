@@ -94,7 +94,7 @@ export default function Home() {
         <div className="flex flex-col justify-center">
           <h1 className="text-[1.875rem] text-[var(--color-three)] font-semibold">Offer For Customer.</h1>
           <p className="text-[3.75rem] text-[--color-one] font-bold">All Products <span className="text-[var(--color-three)] underline">80%</span> Discount.</p>
-          <Link href='/shop' className="bg-[var(--color-three)] flex max-w-[12rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s]">
+          <Link href='/shop' className="bg-[var(--color-three)] flex px-[3rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s] self-start">
               <span className="text-[1.125rem] font-medium">Shop Now</span>
               <FaArrowRightLong className="text-[1.125rem] font-bold"/>
           </Link>
@@ -108,7 +108,7 @@ export default function Home() {
           <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Latest News & Article</h1>
         </div>
         <div className="mt-[5rem] flex flex-wrap gap-[1.5rem]">
-          {products.map((product: Products) =>(
+          {products.slice(0, 3).map((product: Products) =>(
             <div key={product.id} className="h-[32rem] p-[1.5rem] bg-[linear-gradient(#fff5ed,_#f9e3d0)] shadow-md rounded-[0.5rem] flex flex-col gap-[1rem] box-border" style={{flexBasis: 'calc(33.33% - 20px)'}}>
               <div className="bg-center bg-cover w-[100%] h-[15rem] rounded-[0.5rem]" style={{ backgroundImage: `url(${product.background})` }}></div>
               <h1 className="text-[var(--color-three)] font-semibold mt-[1rem]">{product.date}</h1>

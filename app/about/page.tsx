@@ -13,7 +13,7 @@ const page = () => {
         <h1 className="text-[var(--color-two)] text-[4.69rem] font-bold">About Us</h1>
         <div className="flex px-[1rem] py-[0.5rem] bg-[var(--color-three)] rounded-[50vw] gap-[0.4rem] font-medium absolute bottom-[-1rem]">
           <Link href='/' className="hover:text-[var(--color-two)] text-[var(--color-white)] [transition:color_0.3s]">Home</Link>
-          <span className="text-[var(--color-white)]">&#47;&#47;  about</span>
+          <span className="text-[var(--color-white)]">&#47;&#47;  About Us</span>
         </div>
       </div>
       <div className="py-[10rem] px-lr-custom flex gap-[4rem]">

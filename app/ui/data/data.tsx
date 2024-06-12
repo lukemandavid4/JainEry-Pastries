@@ -120,21 +120,39 @@ export interface Products{
 export const products: Products[] = [
   {
     id: 1,
-    background: '/home/one.jpg',
+    background: '/blog/one.jpg',
     date: 'FEBRUARY 28, 2023',
     content: 'Exploring the World of Bakery Items'
   },
   {
     id: 2,
-    background: '/home/two.jpg',
+    background: '/blog/two.jpg',
     date: 'FEBRUARY 6, 2023',
     content: 'The Rise of Artisanal Bread A Trend Worth Trying'
   },
   {
     id: 3,
-    background: '/home/three.jpg',
+    background: '/blog/three.jpg',
     date: 'FEBRUARY 6, 2023',
     content: 'A Behind the Scenes Look at the Kitchen'
+  },
+  {
+    id: 4,
+    background: '/blog/four.jpg',
+    date: 'FEBRUARY 6, 2023',
+    content: 'Discovering the Best Brunch Spots in the City'
+  },
+  {
+    id: 5,
+    background: '/blog/five.jpg',
+    date: 'FEBRUARY 6, 2023',
+    content: 'A Guide to Finding Authentic International Eats'
+  },
+  {
+    id: 6,
+    background: '/blog/six.jpg',
+    date: 'FEBRUARY 6, 2023',
+    content: 'A Behind-the-Scenes Look at Local Bakeries'
   }
 ]
 
