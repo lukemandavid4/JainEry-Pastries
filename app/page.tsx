@@ -66,7 +66,7 @@ export default function Home() {
       </div>
       <div className="py-[3.5rem] md:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-[2rem] md:px-lr-custom">
         <div className="text-center">
-          <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST PRODUCTS</span>
+          <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST PRODUCTS</span>
         </div>
         <div className="text-center mt-[1rem] md:mt-[2rem]">
           <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold">Special Bakery Products</h1>
@@ -89,45 +89,45 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="max-h-[26.5rem] py-[3rem] bg-[var(--color-five)] px-[2rem] md:px-lr-custom flex gap-[4rem]">
+      <div className="max-h-[26.5rem] py-[3rem] md:py-0 bg-[var(--color-five)] px-[2rem] md:px-lr-custom flex gap-[4rem]">
         <Image src='/home/banner.png' width={550} height={100} alt="banner" className="hidden md:flex"></Image>
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center gap-[0.5rem] md:gap-0">
           <h1 className="text-[1.56rem] md:text-[1.875rem] text-[var(--color-three)] font-semibold">Offer For Customer.</h1>
-          <p className="text-[2.625rem] md:text-[3.75rem] text-[--color-two] flex font-bold">All Products<span className="text-[var(--color-three)] underline">80%</span> Discount.</p>
+          <p className="text-[2.625rem] md:text-[3.75rem] text-[--color-two] leading-[2.875rem] md:leading-normal font-bold ">All Products<span className="text-[var(--color-three)] underline"> 80%</span> Discount.</p>
           <Link href='/shop' className="bg-[var(--color-three)] flex px-[2rem] md:px-[3rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s] self-start">
               <span className="text-[1.125rem] font-medium">Shop Now</span>
               <FaArrowRightLong className="text-[1.125rem] font-bold"/>
           </Link>
         </div>
       </div>
-      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-lr-custom py-[7.5rem]">
+      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-[2rem] md:px-lr-custom py-[3rem] md:py-[7.5rem]">
         <div className="text-center">
-          <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST BLOG POST</span>
+          <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST BLOG POST</span>
         </div>
-        <div className="text-center mt-[2rem]">
-          <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Latest News & Article</h1>
+        <div className="text-center mt-[1rem] md:mt-[2rem]">
+          <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold">Latest News & Article</h1>
         </div>
-        <div className="mt-[5rem] flex flex-wrap gap-[1.5rem]">
+        <div className="mt-[2rem] md:mt-[5rem] flex flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
           {products.slice(0, 3).map((product: Products) =>(
-            <div key={product.id} className="h-[32rem] p-[1.5rem] bg-[linear-gradient(#fff5ed,_#f9e3d0)] shadow-md rounded-[0.5rem] flex flex-col gap-[1rem] box-border" style={{flexBasis: 'calc(33.33% - 20px)'}}>
-              <div className="bg-center bg-cover w-[100%] h-[15rem] rounded-[0.5rem]" style={{ backgroundImage: `url(${product.background})` }}></div>
-              <h1 className="text-[var(--color-three)] font-semibold mt-[1rem]">{product.date}</h1>
-              <p className="text-[1.4rem] text-[var(--color-one)] font-semibold">{product.content}</p>
+            <div key={product.id} className="min-h-[30.5rem] md:min-h-[32rem] p-[1rem] md:p-[1.5rem] bg-[linear-gradient(#fff5ed,_#f9e3d0)] shadow-md rounded-[0.5rem] flex flex-col gap-[1rem] box-border" style={{flexBasis: 'calc(33.33% - 20px)'}}>
+              <div className="bg-center bg-cover w-[100%] min-h-[15rem] rounded-[0.5rem]" style={{ backgroundImage: `url(${product.background})` }}></div>
+              <h1 className="text-[0.8125rem] md:text-[1rem] text-[var(--color-three)] font-semibold mt-[1rem]">{product.date}</h1>
+              <p className="text-[1.2rem] md:text-[1.4rem] text-[var(--color-one)] font-semibold">{product.content}</p>
               <div className="mt-[1rem]">
                 <Link href='' className="text-[var(--color-one)] text-[0.9rem] font-medium border-[var(--color-three)] border-[2px] border-solid px-[2rem] py-[0.8rem] rounded-[0.3rem] hover:text-[var(--color-white)] hover:bg-[var(--color-three)] [transition:background_0.3s,_color_0.3s]">READ MORE</Link>
               </div>
             </div>
           ))}
         </div>
-        <div className="mt-[10rem] mb-[-11rem]">
+        <div className="mt-[5rem] md:mt-[10rem] md:mb-[-11rem]">
           <div className="text-center">
-            <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">BOOK RESERVATION</span>
+            <span className="text-[var(--color-three)] font-medium text-[0.8125rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">BOOK RESERVATION</span>
           </div>
-          <div className="text-center mt-[2rem]">
-            <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Book Our Reservation</h1>
+          <div className="text-center my-[2rem]">
+            <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold">Book Our Reservation</h1>
           </div>
-          <div className="h-[40rem] bg-[url('/home/book.jpg')] bg-cover bg-center w-full rounded-[0.7rem] p-[4rem] flex flex-col gap-[1rem]">
-            <div className="flex justify-between">
+          <div className="min-h-[40rem] bg-[url('/home/book.jpg')] bg-cover bg-center w-full rounded-[0.7rem] p-[2rem] md:p-[4rem] flex flex-col gap-[1rem]">
+            <div className="flex flex-col md:flex-row justify-between gap-[1rem]">
               <input type="text" name="name" id="name" placeholder="Full Name:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>
               <input type="tel" name="number" id="number" placeholder="Phone Number:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>
               <input type="text" name="email" id="email" placeholder="Email Address:" className="px-[2rem] py-[1rem] rounded-[0.5rem] text-[0.9rem] focus:outline-dashed outline-[1px] outline-[var(--color-three)]" style={{flexBasis: 'calc(33.33% - 10px)'}}/>

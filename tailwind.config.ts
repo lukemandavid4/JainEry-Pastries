@@ -16,6 +16,9 @@ const config: Config = {
       padding: {
         'lr-custom': 'max(19vw, 2rem)',
       },
+      screens: {
+        '2sm': '500px',
+      },
     },
   },
   plugins: [
