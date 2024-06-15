@@ -21,7 +21,7 @@ const Navbar = () => {
         <div>
           <Link href='/'><Image src='/home/logo.png' width={125} height={50} alt="logo"></Image></Link>
         </div>
-        <div className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] absolute bg-[#f9e3d0] md:bg-[var(--color-white)] flex flex-col items-center top-0 w-[100vw] pt-[5.5rem] md:pt-0 md:w-auto md:flex-row h-[100dvh] md:h-auto md:static md:flex [transition:left_0.3s] ${open ? 'left-[0]': 'left-[-100%]'}`}>
+        <div className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] absolute bg-[#f9e3d0] md:bg-[var(--color-white)] flex flex-col items-center top-0 w-[100vw] pt-[5.5rem] md:pt-0 md:w-auto md:flex-row h-[100dvh] md:h-auto md:static md:flex [transition:left_0.3s] ${open ? 'left-[0] fixed': 'left-[-110%]'} z-[999]`}>
           <Link href='/' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] [transition:color_0.3s]">Home</Link>
           <Link href='/about' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] [transition:color_0.3s]">About</Link>
           <Link href='/shop' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] [transition:color_0.3s]">Products</Link>

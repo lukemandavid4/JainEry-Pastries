@@ -10,7 +10,7 @@ export const Footer = () => {
           <LuPhoneCall className="text-[1.8rem]"/>
         </div>
         <div className="flex flex-col text-[var(--color-white)] font-medium">
-          <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem] text-center 2sm:text-start">Call Us:</h1>
+          <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem]">Call Us:</h1>
           <span>+254 700577740</span>
           <span>+254 714292320</span>
         </div>
@@ -20,7 +20,7 @@ export const Footer = () => {
           <TfiEmail className="text-[1.8rem]"/>
         </div>
         <div className="flex flex-col text-[var(--color-white)] font-medium">
-          <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem] text-center 2sm:text-start">Email Now:</h1>
+          <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem] ">Email Now:</h1>
           <span>lukemandavid@gmail.com</span>
           <span>dmwangi595@gmail.com</span>
         </div>
@@ -30,7 +30,7 @@ export const Footer = () => {
           <SlLocationPin className="text-[1.8rem]"/>
         </div>
         <div className="flex flex-col text-[var(--color-white)] font-medium">
-          <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem] text-center 2sm:text-start">Our Location:</h1>
+          <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem]">Our Location:</h1>
           <span>Nairobi city, Nairobi</span>
           <span>Thika, Kiambu</span>
         </div>

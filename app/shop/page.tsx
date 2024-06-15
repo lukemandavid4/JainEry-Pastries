@@ -5,23 +5,23 @@ import { items, BakeryItems } from "../ui/data/data";
 const page = () => {
   return (
     <>
-      <div className="h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-lr-custom flex items-center justify-center relative">
-        <h1 className="text-[var(--color-two)] text-[4.69rem] font-bold">Shop Page</h1>
+      <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
+        <h1 className="text-[var(--color-two)] text-[2.25rem] md:text-[4.69rem] font-bold">Shop Page</h1>
         <div className="flex px-[1rem] py-[0.5rem] bg-[var(--color-three)] rounded-[50vw] gap-[0.4rem] font-medium absolute bottom-[-1rem]">
           <Link href='/' className="hover:text-[var(--color-two)] text-[var(--color-white)] [transition:color_0.3s]">Home</Link>
           <span className="text-[var(--color-white)]">&#47;&#47;  Shop</span>
         </div>
       </div>
-      <div className="py-[7.5rem] bg-[var(--color-white)] px-lr-custom">
+      <div className="py-[4rem] md:py-[7.5rem] bg-[var(--color-white)] px-[2rem] md:px-lr-custom">
         <div className="text-center">
-          <span className="text-[var(--color-three)] font-medium text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST PRODUCTS</span>
+          <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">LATEST PRODUCTS</span>
         </div>
         <div className="text-center mt-[2rem]">
-          <h1 className="text-[3rem] text-[var(--color-two)] font-bold">Special Bakery Products</h1>
+          <h1 className="text-[1.75rem] md:text-[3rem] leading-[2.18rem] md:leading-normal text-[var(--color-two)] font-bold">Special Bakery Products</h1>
         </div>
-        <div className="flex mt-[5rem] flex-wrap gap-[1.5rem]">
+        <div className="flex mt-[3rem] md:mt-[5rem] flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
           {items.map((product: BakeryItems) => (
-            <div key={product.id} className="flex flex-col items-center py-[2rem] bg-[var(--color-white)] rounded-[0.5rem] shadow-sm hover:shadow-lg w-calc-25-minus-10 justify-between transition-shadow duration-300 relative group">
+            <div key={product.id} className="flex flex-col items-center py-[2rem] bg-[var(--color-white)] rounded-[0.5rem] shadow-sm hover:shadow-lg md:w-calc-25-minus-10 justify-between transition-shadow duration-300 relative group">
               <Link href={product.href}>
                 <Image src={product.image} width={150} height={100} alt="croissant"></Image>
               </Link>
