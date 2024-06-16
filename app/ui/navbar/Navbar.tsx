@@ -27,12 +27,14 @@ const Navbar = () => {
           <Link href='/shop' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] [transition:color_0.3s]">Products</Link>
           <Link href='/blog' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] [transition:color_0.3s]">Blogs</Link>
           <div>
-            <div className="cursor-pointer focus:text-[var(--color-three)]">
+            <div className="cursor-pointer focus:text-[var(--color-three)]" onClick={handleOpen}>
               <button className=" flex items-center gap-[0.3rem] hover:text-[var(--color-three)] [transition:color_0.3s]">Pages <IoIosArrowDown /></button>
             </div>
-            <div className="flex-col hidden">
-              <span>FAQ</span>
-              <span>404</span>
+            <div className={`flex flex-col text-[var(--color-two)] rounded-md justify-center items-center absolute bg-[var(--color-five)] w-[8rem] h-[5rem] ${open ? 'block': 'hidden'}`}>
+              <Link href='/faq' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)]" onClick={handleClose}>FAQ</Link>
+              <div className="w-full h-[0.1rem] bg-[var(--color-three)]"></div>
+              <Link href='/not-found' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)]" onClick={handleClose}>404</Link>
+              <div className="w-full h-[0.1rem] absolute bg-[var(--color-three)] bottom-0"></div>
             </div>
           </div>
           <Link href='/contact' className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] [transition:color_0.3s]">Contact</Link>
