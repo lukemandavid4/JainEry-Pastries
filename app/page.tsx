@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -7,23 +8,31 @@ import { TbClock24 } from "react-icons/tb";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { items, BakeryItems } from "./ui/data/data";
 import { products, Products } from "./ui/data/data";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 export default function Home() {
+  useGSAP(() =>{
+    gsap.from('.btn', {
+      x: 200,
+      duration: 0.5
+    })
+  })
   return (
     <div className="">
-      <div className="flex flex-col md:flex-row px-[2rem] md:px-lr-custom py-[3rem] md:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
-        <div className="flex flex-col  md:gap-[1.5rem] md:w-[40%]">
+      <div className="flex flex-col md:flex-row px-[2rem] lg:px-lr-custom py-[3rem] lg:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
+        <div className="flex flex-col  md:gap-[1.5rem] md:w-[50%]">
           <h1 className="text-[var(--color-three)] text-[1.25rem] md:text-[1.875rem] font-medium">Get 80% discount</h1>
           <p className="text-[var(--color-two)] text-[3.75rem] mb-[1.5rem] md:text-[8.625rem] font-bold md:font-extrabold leading-[3.5rem] md:leading-[8.125rem]">Fresh Bakery Foods.</p>
-          <Link href='/shop' className="bg-[var(--color-three)] flex px-[1.5rem] md:px-[3rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s] self-start">
+          <Link href='/shop' className="btn bg-[var(--color-three)] flex px-[1.5rem] md:px-[3rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s] self-start">
             <span className="text-[1.125rem] font-medium">Shop Now</span>
             <FaArrowRightLong className="text-[1.125rem] font-bold"/>
           </Link>
         </div>
-        <div className="hidden md:flex items-center w-[7%] justify-center">
+        <div className="hidden lg:flex items-center lg:w-[7%] justify-center">
           <Image src='/home/line.svg' width={35} height={10} alt="line"></Image>
         </div>
-        <div className="md:w-[43%] flex justify-center">
+        <div className="md:w-[50%] lg:w-[43%] flex justify-center">
           <Image src='/home/basket.png' width={500} height={100} alt="basket"></Image>
         </div>
       </div>

@@ -69,11 +69,11 @@ const Page = () => {
           <div className="w-full">
               {faqData.map((data: faq, index) => (
                 <div key={data.id} className="w-full md:w-[90%]">
-                  <div className="flex items-center justify-between cursor-pointer text-[1.1875rem] font-semibold text-[var(--color-two)]" onClick={() => handleClick(index)}>
+                  <div className="flex items-center justify-between cursor-pointer text-[1.1875rem] font-semibold text-[var(--color-two)] border-b-[1px] border-solid border-[var(--color-five)]" onClick={() => handleClick(index)}>
                     <p className="py-[1rem] border-b-[1px_solid_var(--color-five)]">{data.question}</p>
                     <span className={`${open[index] ? 'rotate-180' : 'rotate-0'}`}><IoIosArrowDown /></span>
                   </div>
-                  <div className={`text-[1.0625rem] text-[var(--color-four)] bg-[var(--color-three)] [transition:height_0.3s] ${open[index] ? 'h-fit' : 'h-0 opacity-0'}`}>
+                  <div className={`text-[1.0625rem] text-[var(--color-four)] [transition:height_0.3s] ${open[index] ? 'py-[1rem] max-h-[40rem] opacity-100 pointer-events-auto' : 'h-0 opacity-0 pointer-events-none'}`}>
                     <p>{data.answer}</p>
                   </div>
                 </div>
