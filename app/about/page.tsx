@@ -10,7 +10,7 @@ const page = () => {
   return (
     <>
       <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
-        <h1 className="text-[var(--color-two)] text-[2.25rem] md:text-[4.69rem] font-bold">About Us</h1>
+        <h1 className="text-[var(--color-two)] text-[2.25rem] md:text-[4.25rem] lg:text-[4.7rem] font-bold">About Us</h1>
         <div className="flex px-[1rem] py-[0.5rem] bg-[var(--color-three)] rounded-[50vw] gap-[0.4rem] font-medium absolute bottom-[-1rem]">
           <Link href='/' className="hover:text-[var(--color-two)] text-[var(--color-white)] [transition:color_0.3s]">Home</Link>
           <span className="text-[var(--color-white)]">&#47;&#47;  About Us</span>
@@ -24,7 +24,7 @@ const page = () => {
           <div>
             <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">ABOUT US</span>
           </div>
-          <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold leading-[2.18rem] md:leading-[3.5rem]">We provide 100% halal bakery product.</h1>
+          <h1 className="text-[1.75rem] md:text-[2.75rem] md:leading-[2.9rem] lg:text-[3rem] text-[var(--color-two)] font-bold leading-[2.18rem] lg:leading-[3.5rem]">We provide 100% halal bakery product.</h1>
           <p className="text-[1.125rem] text-[var(--color-four)]">Netus et malesuada fames ac turpis. Rhoncus urna neque viverra justo nec ultrices. Donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque. Bibendum enim facilisis gravida neque convallis a cras semper auctor. Congue eu consequat ac felis donec et odio. Cursus turpis massa tincidunt dui ut ornare lectus sit. Facilisi cras fermentum odio eu feugiat. Feugiat sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Erat velit scelerisque in dictum. Sit amet est placerat in.</p>
           <p className="text-[1.125rem] text-[var(--color-four)]">Netus et malesuada fames ac turpis. Rhoncus urna neque viverra justo nec ultrices. Donec enim diam vulputate ut pharetra sit amet aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida cum sociis natoque. Bibendum enim facilisis gravida neque convallis a cras semper auctor. Congue eu consequat ac felis donec et odio.</p>
           <Link href='/shop' className="bg-[var(--color-three)] flex px-[2rem] md:px-[3rem] rounded-[50vw] items-center justify-center gap-[1rem] py-[0.8rem] text-[var(--color-white)] hover:bg-[var(--color-two)] [transition:background_0.3s] self-start">
