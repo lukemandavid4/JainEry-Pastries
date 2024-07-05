@@ -71,7 +71,7 @@ const Navbar = () => {
               </button>
             </div>
             <div
-              className={`flex-col text-[var(--color-two)] rounded-md justify-center md:items-center absolute md:bg-[var(--color-five)] w-[8rem] h-[5rem] ${
+              className={`flex-col hidden text-[var(--color-two)] rounded-md justify-center md:items-center absolute md:bg-[var(--color-five)] w-[8rem] h-[5rem] ${
                 open ? "flex" : "hidden"
               }`}
             >

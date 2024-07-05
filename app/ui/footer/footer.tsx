@@ -25,7 +25,7 @@ export const Footer = () => {
           <h1 className="text-[var(--color-white)] text-[1.56rem] font-bold mb-[0.7rem] ">
             Email Now:
           </h1>
-          <span>lukemandavid@gmail.com</span>
+          <span>lukemandavid4@gmail.com</span>
           <span>dmwangi595@gmail.com</span>
         </div>
       </div>
