@@ -51,14 +51,14 @@ const page = () => {
                 name="name"
                 id="name"
                 placeholder="Full Name:"
-                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[2px] border-[var(--color-five)] outline-none"
+                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[1px] border-[var(--color-five)] outline-none"
               />
               <input
                 type="email"
                 name="email"
                 id="email"
                 placeholder="Email:"
-                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[2px] border-[var(--color-five)] outline-none"
+                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[1px] border-[var(--color-five)] outline-none"
               />
             </div>
             <div className="flex flex-col md:flex-row gap-[1rem]">
@@ -67,14 +67,14 @@ const page = () => {
                 name="tel"
                 id="tel"
                 placeholder="Phone:"
-                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[2px] border-[var(--color-five)] outline-none"
+                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[1px] border-[var(--color-five)] outline-none"
               />
               <input
                 type="text"
                 name="subject"
                 id="subject"
                 placeholder="Subject:"
-                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[2px] border-[var(--color-five)] outline-none"
+                className="w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[1px] border-[var(--color-five)] outline-none"
               />
             </div>
             <div>
@@ -83,7 +83,7 @@ const page = () => {
                 id="message"
                 cols={30}
                 rows={10}
-                className="resize-none w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[2px] border-[var(--color-five)] outline-none"
+                className="resize-none w-[100%] rounded-[0.5rem] px-[2rem] py-[1rem] text-[0.9rem] focus:border-[var(--color-three)] focus:border-[1px]  border-[1px] border-[var(--color-five)] outline-none"
                 placeholder="Write your message..."
               />
             </div>
