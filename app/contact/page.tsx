@@ -1,6 +1,11 @@
+"use client";
 import Link from "next/link";
+import { FormEvent } from "react";
 
 const page = () => {
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+  };
   return (
     <>
       <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
@@ -39,7 +44,7 @@ const page = () => {
           <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] leading-normal font-bold md:leading-[3.5rem]">
             How can we help you?
           </h1>
-          <form className="flex flex-col gap-[1rem]">
+          <form className="flex flex-col gap-[1rem]" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row gap-[1rem]">
               <input
                 type="text"
