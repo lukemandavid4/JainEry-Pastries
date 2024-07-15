@@ -13,7 +13,7 @@ import gsap from "gsap";
 
 export default function Home() {
   return (
-    <div className="">
+    <div>
       <div className="flex flex-col md:flex-row px-[2rem] lg:px-lr-custom py-[3rem] lg:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
         <div className="flex flex-col  md:gap-[1.5rem] md:w-[50%]">
           <h1 className="text-[var(--color-three)] text-[1.25rem] md:text-[1.875rem] font-medium">
@@ -166,7 +166,10 @@ export default function Home() {
           </h1>
           <p className="text-[2.625rem] md:text-[3.75rem] text-[--color-two] leading-[2.875rem] md:leading-normal font-bold ">
             All Products
-            <span className="text-[var(--color-three)] underline"> 80%</span>{" "}
+            <span className="text-[var(--color-three)] underline">
+              {" "}
+              80%
+            </span>{" "}
             Discount.
           </p>
           <Link
