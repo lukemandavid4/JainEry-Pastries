@@ -10,9 +10,9 @@ const Cart = () => {
   };
   return (
     <main
-      className={`fixed bg-white right-0 top-0 w-[30rem] h-full py-6 ${
+      className={`fixed bg-white right-0 top-0 w-full 2sm:w-[30rem] h-full py-6 ${
         close ? "right-[-100%]" : ""
-      } [transition:right_,0.5s]`}
+      } [transition:right_,0.3s]`}
     >
       <div className="flex items-center justify-between px-6">
         <h1 className="text-[1.4375rem] font-bold text-[var(--color-two)]">
