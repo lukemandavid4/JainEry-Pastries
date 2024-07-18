@@ -6,9 +6,14 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
+import Cart from "../cart/cart";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+  const handleOpenCart = () => {
+    setOpenCart(!openCart);
+  };
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -29,7 +34,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div
-          className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] absolute bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] md:pt-0 lg:w-auto lg:flex-row h-[100dvh] lg:h-auto lg:static md:flex [transition:left_0.3s] ${
+          className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:w-auto lg:flex-row h-full lg:h-auto lg:static md:flex [transition:left_0.3s] ${
             open ? "left-[0] fixed" : "left-[-110%]"
           } z-[999]`}
         >
@@ -102,7 +107,10 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex items-center gap-[2rem]">
-          <button className="border-[1px] p-[0.5rem] border-[var(--color-grey)] rounded-[50%]">
+          <button
+            className="border-[1px] p-[0.5rem] border-[var(--color-grey)] rounded-[50%]"
+            onClick={handleOpenCart}
+          >
             <TiShoppingCart className="text-[1.5rem]" />
           </button>
           <Link
@@ -128,6 +136,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+      <Cart otherStyles={`${open ? "right-0" : ""}`} />
     </>
   );
 };
