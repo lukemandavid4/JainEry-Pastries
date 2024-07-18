@@ -14,12 +14,12 @@ import gsap from "gsap";
 export default function Home() {
   return (
     <div>
-      <div className="flex flex-col md:flex-row px-[2rem] lg:px-lr-custom py-[3rem] lg:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
-        <div className="flex flex-col  md:gap-[1.5rem] md:w-[50%]">
-          <h1 className="text-[var(--color-three)] text-[1.25rem] md:text-[1.875rem] font-medium">
+      <div className="flex flex-col lg:flex-row px-[2rem] lg:px-lr-custom py-[3rem] lg:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
+        <div className="flex flex-col  lg:gap-[1.5rem] lg:w-[50%]">
+          <h1 className="text-[var(--color-three)] text-[1.25rem] lg:text-[1.875rem] font-medium">
             Get 80% discount
           </h1>
-          <p className="text-[var(--color-two)] text-[3.75rem] mb-[1.5rem] md:text-[8.625rem] font-bold md:font-extrabold leading-[3.5rem] md:leading-[8.125rem]">
+          <p className="text-[var(--color-two)] text-[3.75rem] mb-[1.5rem] lg:text-[8.625rem] font-bold md:font-extrabold leading-[3.5rem] lg:leading-[8.125rem]">
             Fresh Bakery Foods.
           </p>
           <Link
@@ -33,7 +33,7 @@ export default function Home() {
         <div className="hidden lg:flex items-center lg:w-[7%] justify-center">
           <Image src="/home/line.svg" width={35} height={10} alt="line"></Image>
         </div>
-        <div className="md:w-[50%] lg:w-[43%] flex justify-center">
+        <div className="lg:w-[43%] flex justify-center">
           <Image
             src="/home/basket.png"
             width={500}

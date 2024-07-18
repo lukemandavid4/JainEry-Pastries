@@ -4,7 +4,7 @@ import { SlLocationPin } from "react-icons/sl";
 
 export const Footer = () => {
   return (
-    <div className="bg-[url('/home/footer.svg')] bg-center bg-cover md:min-h-[15.375rem] px-[2rem] md:px-lr-custom flex flex-col gap-[2rem] md:gap-0 md:flex-row md:items-center md:justify-between py-[5rem] md:py-0">
+    <div className="bg-[url('/home/footer.svg')] bg-center bg-cover md:min-h-[15.375rem] px-[2rem] xl:px-lr-custom flex flex-col gap-[2rem] md:gap-0 md:flex-row md:items-center md:justify-between py-[5rem] md:py-0">
       <div className="flex gap-[2rem]">
         <div className="p-[1.5rem] bg-[var(--color-white)] rounded-[50%] flex items-center justify-center outline-[var(--color-white)] outline-[1px] outline-dashed outline-offset-[0.5rem] self-center">
           <LuPhoneCall className="text-[1.8rem]" />

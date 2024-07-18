@@ -23,7 +23,7 @@ const page = () => {
           <span className="text-[var(--color-white)]">&#47;&#47; About Us</span>
         </div>
       </div>
-      <div className="py-[5rem] md:py-[10rem] px-[2rem] md:px-lr-custom flex flex-col md:flex-row gap-[4rem]">
+      <div className="py-[5rem] lg:py-[10rem] px-[2rem] md:px-lr-custom flex flex-col lg:flex-row gap-[4rem]">
         <div
           className="flex justify-center md:justify-end"
           style={{ flexBasis: "calc(50% - 20px)" }}
@@ -75,7 +75,7 @@ const page = () => {
           </Link>
         </div>
       </div>
-      <div className="px-[2rem] md:px-lr-custom flex flex-col md:flex-row gap-[2rem] pb-[5rem]">
+      <div className="px-[2rem] md:px-lr-custom flex flex-col lg:flex-row gap-[2rem] pb-[5rem]">
         <div
           className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem]"
           style={{ flexBasis: "calc(50% - 20px)" }}
@@ -111,7 +111,7 @@ const page = () => {
           </span>
         </div>
       </div>
-      <div className="min-h-[16.25rem] py-[2.5rem] bg-[var(--color-three)] bg-[url('/home/home-background.svg')] px-[2rem] md:px-lr-custom flex items-center flex-col md:flex-row gap-[3rem]">
+      <div className="min-h-[16.25rem] py-[2.5rem] bg-[var(--color-three)] bg-[url('/home/home-background.svg')] px-[2rem] xl:px-lr-custom flex items-center flex-col md:flex-row gap-[3rem]">
         <div className="flex flex-col gap-[1rem] items-center [flex-basis:33.33%]">
           <div className="flex items-center justify-center outline-dashed outline-[var(--color-white)] outline-[1px] outline-offset-[0.5rem] bg-[var(--color-white)] rounded-[50%] w-[5rem] h-[5rem]">
             <TbTruckDelivery className="text-[var(--color-black)] text-[2.5rem]" />
@@ -154,13 +154,13 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="py-[3rem] md:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-[2rem] md:px-lr-custom">
+      <div className="py-[3rem] lg:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-[2rem] xl:px-lr-custom">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
             TEAM MEMBERS
           </span>
         </div>
-        <div className="text-center mt-[1rem] md:mt-[2rem]">
+        <div className="text-center mt-[4rem] lg:mt-[2rem]">
           <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold">
             Our Expert Chef
           </h1>

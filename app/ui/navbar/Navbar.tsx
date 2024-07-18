@@ -12,7 +12,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const handleOpenCart = () => {
-    setOpenCart(!openCart);
+    setOpenCart(true);
   };
   const handleOpen = () => {
     setOpen(!open);
@@ -34,7 +34,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div
-          className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:w-auto lg:flex-row h-full lg:h-auto lg:static md:flex [transition:left_0.3s] ${
+          className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:pt-0 lg:w-auto lg:flex-row h-full lg:h-auto lg:static [transition:left_0.3s] ${
             open ? "left-[0] fixed" : "left-[-110%]"
           } z-[999]`}
         >
@@ -136,7 +136,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <Cart otherStyles={`${openCart ? "right-[0rem]" : "right-[-100%]"}`} />
+      <Cart otherStyles={`${openCart ? "right-0" : "right-[-100%]"}`} />
     </>
   );
 };
