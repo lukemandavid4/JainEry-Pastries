@@ -136,7 +136,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <Cart otherStyles={`${open ? "right-0" : ""}`} />
+      <Cart otherStyles={`${openCart ? "right-0" : ""}`} />
     </>
   );
 };
