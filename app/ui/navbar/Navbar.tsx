@@ -11,11 +11,9 @@ import Cart from "../cart/cart";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
-
   const handleOpenCart = () => {
     setOpenCart(!openCart);
   };
-
   const handleToggleMenu = () => {
     setOpen(!open);
   };
@@ -62,15 +60,15 @@ const Navbar = () => {
             >
               <Link
                 href="/faq"
-                className="focus:text-[var(--color-three)] hover:text-[var(--color-three)]"
+                className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] mb-1"
                 onClick={handleToggleMenu}
               >
                 FAQ
               </Link>
-              <div className="w-full h-[0.1rem] bg-[var(--color-three)]"></div>
+              <div className="w-full h-[1px] bg-[var(--color-three)]"></div>
               <Link
                 href="/not-found"
-                className="focus:text-[var(--color-three)] hover:text-[var(--color-three)]"
+                className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] mt-1"
                 onClick={handleToggleMenu}
               >
                 404
