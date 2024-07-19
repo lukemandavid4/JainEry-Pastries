@@ -22,7 +22,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <div className="h-[5.5rem] px-[2rem] lg:px-lr-custom bg-[var(--color-white)] flex items-center justify-between relative lg:static">
+      <div className="h-[5.5rem] px-[2rem] xl:px-lr-custom bg-[var(--color-white)] flex items-center justify-between relative lg:static">
         <div>
           <Link href="/">
             <Image

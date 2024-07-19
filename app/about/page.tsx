@@ -23,7 +23,7 @@ const page = () => {
           <span className="text-[var(--color-white)]">&#47;&#47; About Us</span>
         </div>
       </div>
-      <div className="py-[5rem] lg:py-[10rem] px-[2rem] md:px-lr-custom flex flex-col lg:flex-row gap-[4rem]">
+      <div className="py-[5rem] lg:py-[10rem] px-[2rem] xl:px-lr-custom flex flex-col lg:flex-row gap-[4rem]">
         <div
           className="flex justify-center md:justify-end"
           style={{ flexBasis: "calc(50% - 20px)" }}
@@ -75,7 +75,7 @@ const page = () => {
           </Link>
         </div>
       </div>
-      <div className="px-[2rem] md:px-lr-custom flex flex-col lg:flex-row gap-[2rem] pb-[5rem]">
+      <div className="px-[2rem] xl:px-lr-custom flex flex-col lg:flex-row gap-[2rem] pb-[5rem]">
         <div
           className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem]"
           style={{ flexBasis: "calc(50% - 20px)" }}
