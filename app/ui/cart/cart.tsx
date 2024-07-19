@@ -13,7 +13,7 @@ const Cart: React.FC<CartProps> = ({ otherStyles }) => {
   };
   return (
     <main
-      className={`fixed bg-white  ${otherStyles} top-0 w-full 2sm:w-[30rem] h-full py-6 ${
+      className={`fixed bg-white  ${otherStyles} top-0 w-full 2sm:w-[30rem] h-full py-6 z-[10000] ${
         close ? "right-[-100%]" : "right-0"
       } [transition:right_,0.3s] `}
     >
