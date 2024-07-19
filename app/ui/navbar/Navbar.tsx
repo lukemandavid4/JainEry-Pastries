@@ -11,11 +11,11 @@ import Cart from "../cart/cart";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
-  const handleOpenCart = () => {
-    setOpenCart(!openCart);
-  };
   const handleToggleMenu = () => {
     setOpen(!open);
+  };
+  const handleOpenCart = () => {
+    setOpenCart(!openCart);
   };
 
   return (
@@ -30,12 +30,14 @@ const Navbar = () => {
           className={`gap-[2.5rem] font-medium text-[1.1rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:pt-0 lg:w-auto lg:flex-row h-full lg:h-auto lg:static transition-left duration-300 ${
             open ? "left-0 fixed" : "left-[-110%]"
           } z-[999]`}
+          onClick={handleToggleMenu}
         >
           {[
             { href: "/", label: "Home" },
             { href: "/about", label: "About" },
             { href: "/shop", label: "Products" },
             { href: "/blog", label: "Blogs" },
+            { href: "/faq", label: "FAQ" },
             { href: "/contact", label: "Contact" },
           ].map((link) => (
             <Link
@@ -46,36 +48,6 @@ const Navbar = () => {
               {link.label}
             </Link>
           ))}
-          <div>
-            <button
-              className="cursor-pointer focus:text-[var(--color-three)] flex items-center gap-[0.3rem] hover:text-[var(--color-three)] transition-colors duration-300"
-              onClick={handleToggleMenu}
-            >
-              Pages <IoIosArrowDown />
-            </button>
-            <div
-              className={`flex-col text-[var(--color-two)] rounded-md justify-center md:items-center absolute md:bg-[var(--color-five)] w-[8rem] h-[5rem] ${
-                open ? "flex" : "hidden"
-              }`}
-            >
-              <Link
-                href="/faq"
-                className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] mb-1"
-                onClick={handleToggleMenu}
-              >
-                FAQ
-              </Link>
-              <div className="w-full h-[1px] bg-[var(--color-three)]"></div>
-              <Link
-                href="/not-found"
-                className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] mt-1"
-                onClick={handleToggleMenu}
-              >
-                404
-              </Link>
-              <div className="w-full h-[0.1rem] absolute bg-[var(--color-three)] bottom-0"></div>
-            </div>
-          </div>
         </nav>
         <div className="flex items-center gap-[2rem] xl:gap-4">
           <button

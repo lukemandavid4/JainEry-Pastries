@@ -18,7 +18,7 @@ const notFound = () => {
           <span className="text-[var(--color-white)]">&#47;&#47; 404</span>
         </div>
       </div>
-      <div className="px-[2rem] lg:px-lr-custom flex flex-col md:flex-row py-[4rem] md:py-[10rem]">
+      <div className="px-[2rem] xl:px-lr-custom flex flex-col md:flex-row py-[4rem] md:py-[10rem]">
         <div
           className="flex flex-col gap-[1.5rem] [direction:ltr]"
           style={{ flexBasis: "calc(40% - 20px)" }}

@@ -61,7 +61,7 @@ const Page = () => {
   ];
   return (
     <>
-      <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
+      <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] lg:px-lr-custom flex items-center justify-center relative">
         <h1 className="text-[var(--color-two)] text-[2.25rem] md:text-[4.69rem] font-bold">
           FAQ
         </h1>
@@ -75,7 +75,7 @@ const Page = () => {
           <span className="text-[var(--color-white)]">&#47;&#47; FAQ</span>
         </div>
       </div>
-      <div className="px-[2rem] md:px-lr-custom py-[6rem] flex flex-col md:flex-row gap-[2rem]">
+      <div className="px-[2rem] xl:px-lr-custom py-[6rem] flex flex-col md:flex-row gap-[2rem]">
         <div
           className="flex flex-col gap-[1rem]"
           style={{ flexBasis: "calc(60% - 10px)" }}
