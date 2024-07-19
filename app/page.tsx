@@ -14,7 +14,7 @@ import gsap from "gsap";
 export default function Home() {
   return (
     <div>
-      <div className="flex flex-col lg:flex-row px-[2rem] lg:px-lr-custom py-[3rem] lg:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
+      <div className="flex flex-col lg:flex-row px-[2rem] xl:px-lr-custom py-[3rem] lg:py-[8.25rem] h-[48.875rem] bg-[url('/home/background-jainery.png')] bg-center bg-cover bg-[var(--color-five)] justify-between gap-[1rem]">
         <div className="flex flex-col  lg:gap-[1.5rem] lg:w-[50%]">
           <h1 className="text-[var(--color-three)] text-[1.25rem] lg:text-[1.875rem] font-medium">
             Get 80% discount
@@ -42,7 +42,7 @@ export default function Home() {
           ></Image>
         </div>
       </div>
-      <div className="min-h-[28.75rem] py-[3rem] flex gap-[1.5rem] flex-col md:flex-row px-[2rem] md:px-lr-custom items-center justify-between">
+      <div className="min-h-[28.75rem] py-[3rem] flex gap-[1.5rem] flex-col md:flex-row px-[2rem] xl:px-lr-custom items-center justify-between">
         {data.map((item: BakeryItem) => (
           <Link
             key={item.id}
@@ -61,7 +61,7 @@ export default function Home() {
           </Link>
         ))}
       </div>
-      <div className="min-h-[16.25rem] py-[2.5rem] bg-[var(--color-three)] bg-[url('/home/home-background.svg')] px-[2rem] md:px-lr-custom flex items-center flex-col md:flex-row gap-[3rem]">
+      <div className="min-h-[16.25rem] py-[2.5rem] bg-[var(--color-three)] bg-[url('/home/home-background.svg')] px-[2rem] xl:px-lr-custom flex items-center flex-col md:flex-row gap-[3rem]">
         <div className="flex flex-col gap-[1rem] items-center [flex-basis:33.33%]">
           <div className="flex items-center justify-center outline-dashed outline-[var(--color-white)] outline-[1px] outline-offset-[0.5rem] bg-[var(--color-white)] rounded-[50%] w-[5rem] h-[5rem]">
             <TbTruckDelivery className="text-[var(--color-black)] text-[2.5rem]" />
@@ -104,7 +104,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className="py-[3.5rem] md:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-[2rem] md:px-lr-custom">
+      <div className="py-[3.5rem] md:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-[2rem] xl:px-lr-custom">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
             LATEST PRODUCTS
@@ -152,13 +152,13 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div className="max-h-[26.5rem] py-[3rem] md:py-0 bg-[var(--color-five)] px-[2rem] md:px-lr-custom flex gap-[4rem]">
+      <div className="min-h-[20.5rem] lg:h-f py-[3rem] xl:py-0 bg-[var(--color-five)] px-[2rem] xl:px-lr-custom flex gap-[4rem]">
         <Image
           src="/home/banner.png"
           width={550}
           height={100}
           alt="banner"
-          className="hidden md:flex"
+          className="hidden xl:flex"
         ></Image>
         <div className="flex flex-col justify-center gap-[0.5rem] md:gap-0">
           <h1 className="text-[1.56rem] md:text-[1.875rem] text-[var(--color-three)] font-semibold">
@@ -181,7 +181,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
-      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-[2rem] md:px-lr-custom py-[3rem] md:py-[7.5rem]">
+      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-[2rem] xl:px-lr-custom py-[3rem] md:py-[7.5rem]">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
             LATEST BLOG POST
@@ -192,7 +192,7 @@ export default function Home() {
             Latest News & Article
           </h1>
         </div>
-        <div className="mt-[2rem] md:mt-[5rem] flex flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
+        <div className="mt-[2rem] md:mt-[5rem] flex flex-col lg:flex-row md:flex-wrap gap-[1.5rem]">
           {products.slice(0, 3).map((product: Products) => (
             <div
               key={product.id}
@@ -231,8 +231,8 @@ export default function Home() {
               Book Our Reservation
             </h1>
           </div>
-          <div className="min-h-[40rem] bg-[url('/home/book.jpg')] bg-cover bg-center w-full rounded-[0.7rem] p-[2rem] md:p-[4rem] flex flex-col gap-[1rem]">
-            <div className="flex flex-col md:flex-row justify-between gap-[1rem]">
+          <div className="min-h-[40rem] bg-[url('/home/book.jpg')] bg-cover bg-center w-full rounded-[0.7rem] p-[2rem] lg:p-[4rem] flex flex-col gap-[1rem]">
+            <div className="flex flex-col lg:flex-row justify-between gap-[1rem]">
               <input
                 type="text"
                 name="name"
