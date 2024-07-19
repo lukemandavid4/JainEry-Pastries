@@ -19,7 +19,7 @@ const page = () => {
           <span className="text-[var(--color-white)]">&#47;&#47; Shop</span>
         </div>
       </div>
-      <div className="py-[4rem] md:py-[7.5rem] bg-[var(--color-white)] px-[2rem] md:px-lr-custom">
+      <div className="py-[4rem] lg:py-[7.5rem] bg-[var(--color-white)] px-[2rem] xl:px-lr-custom">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
             LATEST PRODUCTS
@@ -30,7 +30,7 @@ const page = () => {
             Special Bakery Products
           </h1>
         </div>
-        <div className="flex mt-[3rem] md:mt-[5rem] flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
+        <div className="flex mt-[3rem] lg:mt-[5rem] flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
           {items.map((product: BakeryItems) => (
             <div
               key={product.id}
