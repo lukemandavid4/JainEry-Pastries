@@ -12,7 +12,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
   const handleOpenCart = () => {
-    setOpenCart(true);
+    setOpenCart(!openCart);
   };
   const handleOpen = () => {
     setOpen(!open);
@@ -34,7 +34,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div
-          className={`gap-[2.5rem] font-medium text-[1.125rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:pt-0 lg:w-auto lg:flex-row h-full lg:h-auto lg:static [transition:left_0.3s] ${
+          className={`gap-[2.5rem] font-medium text-[1.1rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:pt-0 lg:w-auto lg:flex-row h-full lg:h-auto lg:static [transition:left_0.3s] ${
             open ? "left-[0] fixed" : "left-[-110%]"
           } z-[999]`}
         >
@@ -106,7 +106,7 @@ const Navbar = () => {
             Contact
           </Link>
         </div>
-        <div className="flex items-center gap-[2rem]">
+        <div className="flex items-center gap-[2rem] xl:gap-4">
           <button
             className="border-[1px] p-[0.5rem] border-[var(--color-grey)] rounded-[50%]"
             onClick={handleOpenCart}
@@ -115,7 +115,7 @@ const Navbar = () => {
           </button>
           <Link
             href="/contact"
-            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[1rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s] hidden lg:flex"
+            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[1rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] [transition:background_0.3s] hidden lg:flex"
           >
             Book Reservartion
           </Link>

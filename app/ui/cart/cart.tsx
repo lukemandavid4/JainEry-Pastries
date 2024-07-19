@@ -9,7 +9,7 @@ type CartProps = {
 const Cart: React.FC<CartProps> = ({ otherStyles }) => {
   const [close, setClose] = useState(false);
   const handleClick = () => {
-    setClose(true);
+    setClose(!close);
   };
   return (
     <main
