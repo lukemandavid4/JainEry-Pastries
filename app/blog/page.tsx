@@ -18,7 +18,7 @@ const page = () => {
           <span className="text-[var(--color-white)]">&#47;&#47; Blog</span>
         </div>
       </div>
-      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-[2rem] md:px-lr-custom py-[4rem] md:py-[7.5rem]">
+      <div className="bg-[linear-gradient(#fff,_#fff5ed)] px-[2rem] 2xl:px-lr-custom py-[4rem] lg:py-[7.5rem]">
         <div className="text-center">
           <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
             LATEST BLOG POST
