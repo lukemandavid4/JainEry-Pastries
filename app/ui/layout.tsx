@@ -2,7 +2,6 @@
 import React from "react";
 import Navbar from "./navbar/Navbar";
 import { Footer } from "./footer/footer";
-import Cart from "./cart/cart";
 
 interface LayoutProps {
   children: React.ReactNode;

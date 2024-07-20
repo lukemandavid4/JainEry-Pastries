@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 type CartProps = {
-  otherStyles: string; // Specify the type more accurately
+  otherStyles: string;
 };
 
 const Cart: React.FC<CartProps> = ({ otherStyles }) => {
