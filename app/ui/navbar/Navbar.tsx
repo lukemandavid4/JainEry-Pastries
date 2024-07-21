@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import { IoIosArrowDown } from "react-icons/io";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
