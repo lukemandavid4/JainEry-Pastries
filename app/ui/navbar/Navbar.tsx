@@ -97,7 +97,23 @@ const Navbar = () => {
           />
         </div>
         <hr className="mt-3" />
-        <div className="px-6 h-full">Hello</div>
+        <div className="px-6 py-4 h-full flex gap-2">
+          <div>
+            <Image
+              src="/home/cup-cake.png"
+              width={50}
+              height={100}
+              alt="image"
+            ></Image>
+          </div>
+          <div className="flex flex-col">
+            <h1 className="font-bold text-[var(--color-two)] text-[1.125rem] tracking-wider">
+              Cup Cake
+            </h1>
+            <p className="text-[var(--color-four)]">Ksh. 250</p>
+            <span className="text-red-500">Remove</span>
+          </div>
+        </div>
         <hr />
         <div className="px-6 absolute bottom-5 w-full flex flex-col gap-4">
           <div className="flex justify-between">
