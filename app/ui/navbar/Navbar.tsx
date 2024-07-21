@@ -49,11 +49,14 @@ const Navbar = () => {
         </nav>
         <div className="flex items-center gap-[2rem] xl:gap-4">
           <button
-            className="border-[1px] p-[0.5rem] border-[var(--color-grey)] rounded-[50%]"
+            className="border-[1px] p-[0.5rem] border-[var(--color-grey)] rounded-[50%] relative"
             onClick={handleOpenCart}
             aria-label="Toggle cart"
           >
             <TiShoppingCart className="text-[1.5rem]" />
+            <div className="absolute size-5 text-white rounded-[50%] flex items-center justify-center bg-[var(--color-three)] text-[0.8rem] font-bold top-[-0.5rem] right-[-0.1rem]">
+              5
+            </div>
           </button>
           <Link
             href="/contact"
