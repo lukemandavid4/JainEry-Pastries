@@ -111,7 +111,7 @@ const Navbar = () => {
               Cup Cake
             </h1>
             <p className="text-[var(--color-four)]">Ksh. 250</p>
-            <span className="text-red-500">Remove</span>
+            <span className="text-red-500 cursor-pointer">Remove</span>
           </div>
         </div>
         <hr />
