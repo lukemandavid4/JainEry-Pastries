@@ -5,10 +5,6 @@ import { items, BakeryItems } from "../ui/data/data";
 import { useState } from "react";
 
 const page = () => {
-  const [title, setTitle] = useState("Add to Cart");
-  const handleClick = () => {
-    setTitle("Adding to Cart...");
-  };
   return (
     <>
       <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
