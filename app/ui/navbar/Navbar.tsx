@@ -59,10 +59,10 @@ const Navbar = () => {
             </div>
           </button>
           <Link
-            href="/contact"
-            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[1rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300 hidden lg:flex"
+            href=""
+            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[0.5rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300 hidden lg:flex"
           >
-            Book Reservation
+            Sign In
           </Link>
           <div
             className="bg-[var(--color-two)] p-[0.4rem] rounded cursor-pointer flex lg:hidden"
