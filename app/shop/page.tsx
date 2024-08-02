@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import { items, BakeryItems } from "../ui/data/data";
-import { useState } from "react";
 
 const page = () => {
   return (

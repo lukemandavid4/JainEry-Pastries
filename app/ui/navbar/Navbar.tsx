@@ -5,6 +5,7 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
+import Login from "../login/login";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -60,7 +61,7 @@ const Navbar = () => {
           </button>
           <Link
             href=""
-            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[0.5rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300 hidden lg:flex"
+            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[0.5rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300"
           >
             Sign In
           </Link>
@@ -128,6 +129,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
+      <Login otherStyles="fixed" />
     </>
   );
 };

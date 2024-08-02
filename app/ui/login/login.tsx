@@ -1,9 +1,11 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
-const Login = () => {
+const Login = ({ otherStyles }) => {
   return (
-    <main className="w-96 p-4 flex flex-col gap-2">
+    <main
+      className={`w-[25rem] p-8 flex flex-col gap-2 ${otherStyles} top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md`}
+    >
       <div className="flex justify-between">
         <h4 className="font-bold text-[var(--color-two)] text-[1.2rem]">
           Login

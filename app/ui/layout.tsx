@@ -2,8 +2,6 @@
 import React from "react";
 import Navbar from "./navbar/Navbar";
 import { Footer } from "./footer/footer";
-import Login from "./login/login";
-import Register from "./register/register";
 
 interface LayoutProps {
   children: React.ReactNode;
