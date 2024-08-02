@@ -16,7 +16,10 @@ const Navbar = () => {
   const handleOpenCart = () => {
     setOpenCart(!openCart);
   };
-
+  const [login, setLogin] = useState(false);
+  const handleLogin = () => {
+    setLogin(!login);
+  };
   return (
     <>
       <div className="h-[5.5rem] px-[2rem] xl:px-lr-custom bg-[var(--color-white)] flex items-center justify-between relative lg:static">
@@ -59,12 +62,12 @@ const Navbar = () => {
               5
             </div>
           </button>
-          <Link
-            href=""
+          <button
             className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[0.5rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300"
+            onClick={handleLogin}
           >
             Sign In
-          </Link>
+          </button>
           <div
             className="bg-[var(--color-two)] p-[0.4rem] rounded cursor-pointer flex lg:hidden"
             onClick={handleToggleMenu}
@@ -129,7 +132,7 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <Login otherStyles="fixed" />
+      <Login otherStyles={login ? "flex" : "hidden"} />
     </>
   );
 };

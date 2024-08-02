@@ -1,7 +1,6 @@
 import React from "react";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
-import { text } from "stream/consumers";
 
 const Register = () => {
   return (
