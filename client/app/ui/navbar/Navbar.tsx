@@ -5,20 +5,29 @@ import { CgMenuRightAlt } from "react-icons/cg";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
-import Login from "../login/login";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const [openCart, setOpenCart] = useState(false);
+  const [login, setLogin] = useState(false);
+  const [register, setRegister] = useState(false);
+
   const handleToggleMenu = () => {
     setOpen(!open);
   };
+
   const handleOpenCart = () => {
     setOpenCart(!openCart);
   };
-  const [login, setLogin] = useState(false);
+
   const handleLogin = () => {
     setLogin(!login);
+    if (register) setRegister(false);
+  };
+
+  const handleRegister = () => {
+    setRegister(!register);
+    if (login) setLogin(false);
   };
   return (
     <>
@@ -132,7 +141,108 @@ const Navbar = () => {
           </Link>
         </div>
       </div>
-      <Login otherStyles={login ? "flex" : "hidden"} />
+      <div
+        className={`w-full h-full bg-[#000000B3] fixed z-[9999999] ${
+          login ? "flex" : "hidden"
+        }`}
+      >
+        <div className="w-[25rem] p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
+          <div className="flex justify-between">
+            <h4 className="font-bold text-[var(--color-two)] text-[1.2rem]">
+              Login
+            </h4>
+            <IoClose
+              className={`text-[1.5rem] text-[var(--color-two)]
+          cursor-pointer`}
+              onClick={handleLogin}
+            />
+          </div>
+          <form className="flex flex-col gap-6">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+            />
+            <button
+              type="submit"
+              className="bg-[var(--color-three)] text-white py-2 rounded-[0.25rem] hover:bg-[var(--color-two)] transition-colors duration-300"
+            >
+              Login
+            </button>
+          </form>
+          <div className="flex gap-1 mt-4">
+            <p>Create a new account?</p>
+            <button
+              onClick={handleRegister}
+              className="text-[var(--color-three)]"
+            >
+              Click here
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        className={`w-full h-full bg-[#000000B3] fixed z-[9999999] ${
+          register ? "flex" : "hidden"
+        }`}
+      >
+        <div className="w-[25rem] p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
+          <div className="flex justify-between">
+            <h4 className="font-bold text-[var(--color-two)] text-[1.2rem]">
+              Sign Up
+            </h4>
+            <IoClose
+              onClick={handleRegister}
+              className={`text-[1.5rem] text-[var(--color-two)]
+          cursor-pointer`}
+            />
+          </div>
+          <form className="flex flex-col gap-6">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Name"
+              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+            />
+            <input
+              type="password"
+              name="password"
+              id="password"
+              placeholder="Password"
+              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+            />
+            <button
+              type="submit"
+              className="bg-[var(--color-three)] text-white py-2 rounded-[0.25rem] hover:bg-[var(--color-two)] transition-colors duration-300"
+            >
+              Create Account
+            </button>
+          </form>
+          <div className="flex gap-1 mt-4">
+            <p>Already have an account?</p>
+            <button className="text-[var(--color-three)]" onClick={handleLogin}>
+              Sign In
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

@@ -58,7 +58,7 @@ const page = () => {
                   </span>
                 </div>
               </div>
-              <button className="bg-[var(--color-three)] text-[var(--color-white)] px-6 py-2 rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto">
+              <button className="bg-[var(--color-three)] text-[var(--color-white)] px-4 py-2 rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto">
                 Add to Cart
               </button>
             </div>
