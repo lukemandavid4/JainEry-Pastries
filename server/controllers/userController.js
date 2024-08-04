@@ -1,10 +1,14 @@
 const bcrypt = require(`bcrypt`);
 const validator = require(`validator`);
 const userModel = require(`../models/userSchema`);
-const jwt = require(`jsonwebtoken`);
+require("dotenv").config();
+const jwt = require("jsonwebtoken");
 
+const maxAge = 3 * 24 * 60 * 60;
 const createToken = (id) => {
-  return jwt.sign({ id }, process.env.JWT_SECRET);
+  return jwt.sign({ id }, process.env.JWT_SECRET, {
+    expiresIn: maxAge,
+  });
 };
 
 const register = async (req, res) => {
@@ -35,6 +39,10 @@ const register = async (req, res) => {
     });
 
     const token = createToken(newUser._id);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: maxAge * 1000,
+    });
     res
       .status(200)
       .json({ success: true, message: "User registered successfully", token });
@@ -60,6 +68,10 @@ const login = async (req, res) => {
         .json({ success: false, message: "Invalid Credentials" });
     }
     const token = createToken(user._id);
+    res.cookie("jwt", token, {
+      httpOnly: true,
+      maxAge: maxAge * 1000,
+    });
     res.status(200).json({
       success: true,
       message: "Logged in successfully",
@@ -72,37 +84,4 @@ const login = async (req, res) => {
   }
 };
 
-// const deleteUser = async (req, res) => {
-//   const id = req.params.id;
-//   try {
-//     const user = await userModel.findByIdAndDelete(id, req.body);
-//     if (!user) {
-//       return res
-//         .status(400)
-//         .json({ success: false, message: "User does not exist" });
-//     }
-//     return res
-//       .status(200)
-//       .json({
-//         success: true,
-//         message: "User deleted successfully",
-//         data: user,
-//       });
-//   } catch (error) {
-//     console.log(`Error: ${error}`);
-//     return res.status(500).json({ success: false, message: error.message });
-//   }
-// };
-
-// const deleteAll = async (req, res) => {
-//   try {
-//     const users = await userModel.deleteMany({});
-//     return res
-//       .status(200)
-//       .json({ success: true, message: "Deleted all users" });
-//   } catch (error) {
-//     console.log(`Error: ${error}`);
-//     return res.status(500).json({ success: false, message: error.message });
-//   }
-// };
 module.exports = { register, login };
