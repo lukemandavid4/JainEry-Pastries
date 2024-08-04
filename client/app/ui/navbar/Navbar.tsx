@@ -43,6 +43,12 @@ const Navbar: React.FC = () => {
     }
   }, [isAuthenticated, router]);
 
+  const resetFormFields = () => {
+    setName("");
+    setEmail("");
+    setPassword("");
+  };
+
   const handleSignUp = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     try {
@@ -57,6 +63,8 @@ const Navbar: React.FC = () => {
 
       if (response.status === 200) {
         setIsAuthenticated(true);
+        setRegister(false);
+        resetFormFields();
       } else {
         alert("Error, Something went wrong. Please try again.");
       }
@@ -78,6 +86,8 @@ const Navbar: React.FC = () => {
 
       if (response.status === 200) {
         setIsAuthenticated(true);
+        setLogin(false);
+        resetFormFields();
       } else {
         alert("Error, Invalid credentials. Please try again.");
       }
@@ -211,7 +221,7 @@ const Navbar: React.FC = () => {
           login ? "flex" : "hidden"
         }`}
       >
-        <div className="w-[25rem] p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
+        <div className="w-[21rem] sm:w-[24rem] p-6 sm:p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
           <div className="flex justify-between">
             <h4 className="font-bold text-[var(--color-two)] text-[1.2rem]">
               Sign In
@@ -263,7 +273,7 @@ const Navbar: React.FC = () => {
           register ? "flex" : "hidden"
         }`}
       >
-        <div className="w-[25rem] p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
+        <div className="w-[21rem] sm:w-[24rem] p-6 sm:p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
           <div className="flex justify-between">
             <h4 className="font-bold text-[var(--color-two)] text-[1.2rem]">
               Sign Up
