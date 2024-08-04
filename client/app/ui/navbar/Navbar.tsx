@@ -4,31 +4,94 @@ import Image from "next/image";
 import { CgMenuRightAlt } from "react-icons/cg";
 import { TiShoppingCart } from "react-icons/ti";
 import { IoClose } from "react-icons/io5";
-import { useState } from "react";
+import { useState, ChangeEvent, FormEvent, useEffect } from "react";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
-const Navbar = () => {
-  const [open, setOpen] = useState(false);
-  const [openCart, setOpenCart] = useState(false);
-  const [login, setLogin] = useState(false);
-  const [register, setRegister] = useState(false);
+const Navbar: React.FC = () => {
+  const router = useRouter();
+  const [open, setOpen] = useState<boolean>(false);
+  const [openCart, setOpenCart] = useState<boolean>(false);
+  const [login, setLogin] = useState<boolean>(false);
+  const [register, setRegister] = useState<boolean>(false);
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const handleToggleMenu = () => {
-    setOpen(!open);
+  const handleToggleMenu = (): void => {
+    setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleOpenCart = () => {
-    setOpenCart(!openCart);
+  const handleOpenCart = (): void => {
+    setOpenCart((prevOpenCart) => !prevOpenCart);
   };
 
-  const handleLogin = () => {
-    setLogin(!login);
+  const handleLogin = (): void => {
+    setLogin((prevLogin) => !prevLogin);
     if (register) setRegister(false);
   };
 
-  const handleRegister = () => {
-    setRegister(!register);
+  const handleRegister = (): void => {
+    setRegister((prevRegister) => !prevRegister);
     if (login) setLogin(false);
   };
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      router.push("/");
+    }
+  }, [isAuthenticated, router]);
+
+  const handleSignUp = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/user/register",
+        {
+          name,
+          email,
+          password,
+        }
+      );
+
+      if (response.status === 200) {
+        setIsAuthenticated(true);
+      } else {
+        alert("Error, Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    }
+  };
+
+  const handleSignIn = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://localhost:4000/api/user/login",
+        {
+          email,
+          password,
+        }
+      );
+
+      if (response.status === 200) {
+        setIsAuthenticated(true);
+      } else {
+        alert("Error, Invalid credentials. Please try again.");
+      }
+    } catch (err) {
+      console.error(`Error: ${err}`);
+    }
+  };
+
+  const handleInputChange =
+    (setter: React.Dispatch<React.SetStateAction<string>>) =>
+    (e: ChangeEvent<HTMLInputElement>): void => {
+      setter(e.target.value);
+    };
+
   return (
     <>
       <div className="h-[5.5rem] px-[2rem] xl:px-lr-custom bg-[var(--color-white)] flex items-center justify-between relative lg:static">
@@ -41,7 +104,6 @@ const Navbar = () => {
           className={`gap-[2.5rem] font-medium text-[1.1rem] text-[var(--color-one)] fixed bg-[#f9e3d0] lg:bg-[var(--color-white)] flex flex-col pl-[2rem] top-0 w-[75vw] pt-[5.5rem] lg:pt-0 lg:w-auto lg:flex-row h-full lg:h-auto lg:static transition-left duration-100 ${
             open ? "left-0 fixed" : "left-[-110%]"
           } z-[999]`}
-          onClick={handleToggleMenu}
         >
           {[
             { href: "/", label: "Home" },
@@ -71,15 +133,18 @@ const Navbar = () => {
               5
             </div>
           </button>
-          <button
-            className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[0.5rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300"
-            onClick={handleLogin}
-          >
-            Sign In
-          </button>
+          {!isAuthenticated && (
+            <button
+              className="bg-[var(--color-three)] text-[var(--color-white)] px-[2rem] py-[0.5rem] rounded-[50vw] font-medium text-[1rem] hover:bg-[var(--color-two)] transition-colors duration-300"
+              onClick={handleLogin}
+            >
+              Sign In
+            </button>
+          )}
           <div
             className="bg-[var(--color-two)] p-[0.4rem] rounded cursor-pointer flex lg:hidden"
             onClick={handleToggleMenu}
+            aria-label="Toggle menu"
           >
             <CgMenuRightAlt
               className={`text-[1.5rem] text-[var(--color-white)] ${
@@ -117,7 +182,7 @@ const Navbar = () => {
               width={50}
               height={100}
               alt="image"
-            ></Image>
+            />
           </div>
           <div className="flex flex-col">
             <h1 className="font-bold text-[var(--color-two)] text-[1.125rem] tracking-wider">
@@ -149,21 +214,22 @@ const Navbar = () => {
         <div className="w-[25rem] p-8 flex flex-col gap-2 absolute top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-md">
           <div className="flex justify-between">
             <h4 className="font-bold text-[var(--color-two)] text-[1.2rem]">
-              Login
+              Sign In
             </h4>
             <IoClose
-              className={`text-[1.5rem] text-[var(--color-two)]
-          cursor-pointer`}
+              className="text-[1.5rem] text-[var(--color-two)] cursor-pointer"
               onClick={handleLogin}
             />
           </div>
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-6" onSubmit={handleSignIn}>
             <input
               type="email"
               name="email"
               id="email"
               placeholder="Email"
               className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+              value={email}
+              onChange={handleInputChange(setEmail)}
             />
             <input
               type="password"
@@ -171,6 +237,8 @@ const Navbar = () => {
               id="password"
               placeholder="Password"
               className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+              value={password}
+              onChange={handleInputChange(setPassword)}
             />
             <button
               type="submit"
@@ -201,18 +269,19 @@ const Navbar = () => {
               Sign Up
             </h4>
             <IoClose
+              className="text-[1.5rem] text-[var(--color-two)] cursor-pointer"
               onClick={handleRegister}
-              className={`text-[1.5rem] text-[var(--color-two)]
-          cursor-pointer`}
             />
           </div>
-          <form className="flex flex-col gap-6">
+          <form className="flex flex-col gap-6" onSubmit={handleSignUp}>
             <input
               type="text"
               name="name"
               id="name"
               placeholder="Name"
               className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+              value={name}
+              onChange={handleInputChange(setName)}
             />
             <input
               type="email"
@@ -220,6 +289,8 @@ const Navbar = () => {
               id="email"
               placeholder="Email"
               className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+              value={email}
+              onChange={handleInputChange(setEmail)}
             />
             <input
               type="password"
@@ -227,6 +298,8 @@ const Navbar = () => {
               id="password"
               placeholder="Password"
               className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+              value={password}
+              onChange={handleInputChange(setPassword)}
             />
             <button
               type="submit"
@@ -237,7 +310,7 @@ const Navbar = () => {
           </form>
           <div className="flex gap-1 mt-4">
             <p>Already have an account?</p>
-            <button className="text-[var(--color-three)]" onClick={handleLogin}>
+            <button onClick={handleLogin} className="text-[var(--color-three)]">
               Sign In
             </button>
           </div>
