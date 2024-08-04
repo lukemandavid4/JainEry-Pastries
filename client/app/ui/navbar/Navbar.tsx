@@ -17,6 +17,9 @@ const Navbar: React.FC = () => {
   const [name, setName] = useState<string>("");
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [generalError, setGeneralError] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const handleToggleMenu = (): void => {
@@ -51,6 +54,9 @@ const Navbar: React.FC = () => {
 
   const handleSignUp = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+    setEmailError("");
+    setPasswordError("");
+    setGeneralError("");
     try {
       const response = await axios.post(
         "http://localhost:4000/api/user/register",
@@ -68,13 +74,32 @@ const Navbar: React.FC = () => {
       } else {
         alert("Error, Something went wrong. Please try again.");
       }
-    } catch (err) {
-      console.error(`Error: ${err}`);
+    } catch (error: unknown) {
+      if (typeof error === "object" && error !== null && "response" in error) {
+        const response = (error as { response: any }).response;
+        if (response && response.data) {
+          const errorMessage = response.data.message;
+          if (typeof errorMessage === "string") {
+            if (errorMessage.includes("email")) {
+              setEmailError(errorMessage);
+            } else if (errorMessage.includes("password")) {
+              setPasswordError(errorMessage);
+            } else {
+              setGeneralError(errorMessage);
+            }
+          }
+        }
+      } else {
+        setGeneralError("An unknown error occurred.");
+      }
     }
   };
 
   const handleSignIn = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
+    setEmailError("");
+    setPasswordError("");
+    setGeneralError("");
     try {
       const response = await axios.post(
         "http://localhost:4000/api/user/login",
@@ -91,8 +116,24 @@ const Navbar: React.FC = () => {
       } else {
         alert("Error, Invalid credentials. Please try again.");
       }
-    } catch (err) {
-      console.error(`Error: ${err}`);
+    } catch (error: unknown) {
+      if (typeof error === "object" && error !== null && "response" in error) {
+        const response = (error as { response: any }).response;
+        if (response && response.data) {
+          const errorMessage = response.data.message;
+          if (typeof errorMessage === "string") {
+            if (errorMessage.includes("email")) {
+              setEmailError(errorMessage);
+            } else if (errorMessage.includes("password")) {
+              setPasswordError(errorMessage);
+            } else {
+              setGeneralError(errorMessage);
+            }
+          }
+        }
+      } else {
+        setGeneralError("An unknown error occurred.");
+      }
     }
   };
 
@@ -232,24 +273,35 @@ const Navbar: React.FC = () => {
             />
           </div>
           <form className="flex flex-col gap-6" onSubmit={handleSignIn}>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
-              value={email}
-              onChange={handleInputChange(setEmail)}
-            />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
-              value={password}
-              onChange={handleInputChange(setPassword)}
-            />
+            <div className="flex flex-col">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+                value={email}
+                onChange={handleInputChange(setEmail)}
+              />
+              {emailError ? <p className="text-red-500">{emailError}</p> : null}
+            </div>
+            <div className="flex flex-col">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+                value={password}
+                onChange={handleInputChange(setPassword)}
+              />
+              {passwordError ? (
+                <p className="text-red-500">{passwordError}</p>
+              ) : null}
+              {generalError ? (
+                <p className="text-red-500">{generalError}</p>
+              ) : null}
+            </div>
             <button
               type="submit"
               className="bg-[var(--color-three)] text-white py-2 rounded-[0.25rem] hover:bg-[var(--color-two)] transition-colors duration-300"
@@ -284,33 +336,47 @@ const Navbar: React.FC = () => {
             />
           </div>
           <form className="flex flex-col gap-6" onSubmit={handleSignUp}>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              placeholder="Name"
-              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
-              value={name}
-              onChange={handleInputChange(setName)}
-            />
-            <input
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email"
-              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
-              value={email}
-              onChange={handleInputChange(setEmail)}
-            />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              placeholder="Password"
-              className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
-              value={password}
-              onChange={handleInputChange(setPassword)}
-            />
+            <div className="flex flex-col">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Name"
+                className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+                value={name}
+                onChange={handleInputChange(setName)}
+              />
+            </div>
+            <div className="flex flex-col">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Email"
+                className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+                value={email}
+                onChange={handleInputChange(setEmail)}
+              />
+              {emailError ? <p className="text-red-500">{emailError}</p> : null}
+            </div>
+            <div className="flex flex-col">
+              <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="Password"
+                className="border-[1px] border-[var(--color-four)] py-1 px-2 rounded-[0.25rem] text-[0.9rem] outline-none focus:border-[var(--color-three)] focus:border-[1px]"
+                value={password}
+                onChange={handleInputChange(setPassword)}
+              />
+              {passwordError ? (
+                <p className="text-red-500">{passwordError}</p>
+              ) : null}
+              {generalError ? (
+                <p className="text-red-500">{generalError}</p>
+              ) : null}
+            </div>
+
             <button
               type="submit"
               className="bg-[var(--color-three)] text-white py-2 rounded-[0.25rem] hover:bg-[var(--color-two)] transition-colors duration-300"
