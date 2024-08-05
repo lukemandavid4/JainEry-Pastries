@@ -2,8 +2,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { items, BakeryItems } from "../ui/data/data";
+import { useCart } from "../ui/cartContext/cartContext";
 
-const page = () => {
+const Page = () => {
+  const { addToCart } = useCart();
+
   return (
     <>
       <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
@@ -42,8 +45,8 @@ const page = () => {
                   src={product.image}
                   width={150}
                   height={100}
-                  alt="croissant"
-                ></Image>
+                  alt={product.name}
+                />
               </Link>
               <div className="mt-[2.5rem] text-center group-hover:opacity-0 [transition:opacity_0.3s] group-hover:pointer-events-none">
                 <span className="text-[1.2rem] text-[var(--color-one)] font-semibold">
@@ -58,7 +61,10 @@ const page = () => {
                   </span>
                 </div>
               </div>
-              <button className="bg-[var(--color-three)] text-[var(--color-white)] px-4 py-2 rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto">
+              <button
+                onClick={() => addToCart(product)}
+                className="bg-[var(--color-three)] text-[var(--color-white)] px-4 py-2 rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto"
+              >
                 Add to Cart
               </button>
             </div>
@@ -69,4 +75,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

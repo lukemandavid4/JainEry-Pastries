@@ -7,9 +7,11 @@ import { IoClose } from "react-icons/io5";
 import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import { useCart } from "../cartContext/cartContext";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
+  const { cartItems } = useCart();
   const [open, setOpen] = useState<boolean>(false);
   const [openCart, setOpenCart] = useState<boolean>(false);
   const [login, setLogin] = useState<boolean>(false);
@@ -70,7 +72,7 @@ const Navbar: React.FC = () => {
       if (response.status === 200) {
         setIsAuthenticated(true);
         setRegister(false);
-        resetFormFields();
+        // resetFormFields();
       } else {
         alert("Error, Something went wrong. Please try again.");
       }
@@ -112,7 +114,7 @@ const Navbar: React.FC = () => {
       if (response.status === 200) {
         setIsAuthenticated(true);
         setLogin(false);
-        resetFormFields();
+        // resetFormFields();
       } else {
         alert("Error, Invalid credentials. Please try again.");
       }
@@ -226,24 +228,32 @@ const Navbar: React.FC = () => {
           />
         </div>
         <hr className="mt-3" />
-        <div className="px-6 py-4 h-full flex gap-2">
-          <div>
-            <Image
-              src="/home/cup-cake.png"
-              width={50}
-              height={100}
-              alt="image"
-            />
-          </div>
-          <div className="flex flex-col">
-            <h1 className="font-bold text-[var(--color-two)] text-[1.125rem] tracking-wider">
-              Cup Cake
-            </h1>
-            <p className="text-[var(--color-four)]">Ksh. 250</p>
-            <span className="text-red-500 cursor-pointer">Remove</span>
-          </div>
+        <div className="p-8">
+          {cartItems.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            <ul>
+              {cartItems.map((item) => (
+                <li key={item.id} className="mb-4 flex items-center">
+                  <Image
+                    src={item.image}
+                    alt={item.name}
+                    width={50}
+                    height={50}
+                  />
+                  <div className="ml-4">
+                    <p className="text-[var(--color-two)] font-bold text-[1.2rem] tracking-wide">
+                      {item.name}
+                    </p>
+                    <p className="text-[var(--color-four)] text-[1.1rem]">
+                      Ksh. {item.priceNew}
+                    </p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
-        <hr />
         <div className="px-6 absolute bottom-5 w-full flex flex-col gap-4">
           <div className="flex justify-between">
             <span className="text-[var(--color-four)]">Subtotal</span>

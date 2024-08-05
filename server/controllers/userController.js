@@ -41,7 +41,10 @@ const register = async (req, res) => {
     const token = createToken(newUser._id);
     res.cookie("jwt", token, {
       httpOnly: true,
+      secure: false,
       maxAge: maxAge * 1000,
+      sameSite: "lax", // Helps with CSRF protection
+      path: "/",
     });
     res
       .status(200)
@@ -70,7 +73,10 @@ const login = async (req, res) => {
     const token = createToken(user._id);
     res.cookie("jwt", token, {
       httpOnly: true,
+      secure: false,
       maxAge: maxAge * 1000,
+      sameSite: "lax", // Helps with CSRF protection
+      path: "/",
     });
     res.status(200).json({
       success: true,
