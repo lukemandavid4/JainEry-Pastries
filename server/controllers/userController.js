@@ -28,7 +28,10 @@ const register = async (req, res) => {
     if (password.length < 8) {
       return res
         .status(400)
-        .json({ success: false, message: "Please enter a strong password" });
+        .json({
+          success: false,
+          message: "Password should be more than 8 characters",
+        });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
