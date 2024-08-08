@@ -18,7 +18,7 @@ const register = async (req, res) => {
     if (exist) {
       return res
         .status(400)
-        .json({ success: false, message: "User already exists" });
+        .json({ success: false, message: "Email already in use" });
     }
     if (!validator.isEmail(email)) {
       return res
@@ -26,12 +26,10 @@ const register = async (req, res) => {
         .json({ success: false, message: "Please enter a valid email" });
     }
     if (password.length < 8) {
-      return res
-        .status(400)
-        .json({
-          success: false,
-          message: "Password should be more than 8 characters",
-        });
+      return res.status(400).json({
+        success: false,
+        message: "Password should be more than 8 characters",
+      });
     }
 
     const hashedPassword = await bcrypt.hash(password, 10);
