@@ -25,7 +25,7 @@ const page = () => {
       </div>
       <div className="py-[5rem] lg:py-[10rem] px-[2rem] xl:px-lr-custom flex flex-col lg:flex-row gap-[4rem]">
         <div
-          className="flex justify-center md:justify-end"
+          className="flex justify-center lg:justify-end"
           style={{ flexBasis: "calc(50% - 20px)" }}
         >
           <Image

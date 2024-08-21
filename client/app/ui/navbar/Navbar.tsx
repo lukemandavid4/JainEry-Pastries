@@ -72,7 +72,7 @@ const Navbar: React.FC = () => {
       if (response.status === 200) {
         setIsAuthenticated(true);
         setRegister(false);
-        // resetFormFields();
+        resetFormFields();
       } else {
         alert("Error, Something went wrong. Please try again.");
       }
@@ -169,7 +169,8 @@ const Navbar: React.FC = () => {
             <Link
               key={link.href}
               href={link.href}
-              className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] transition-colors duration-300"
+              className="focus:text-[var(--color-three)] hover:text-[var(--color-three)] transition-colors duration-100"
+              onClick={handleToggleMenu}
             >
               {link.label}
             </Link>
