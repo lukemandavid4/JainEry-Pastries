@@ -44,7 +44,7 @@ const register = async (req, res) => {
       httpOnly: true,
       secure: false,
       maxAge: maxAge * 1000,
-      sameSite: "lax", // Helps with CSRF protection
+      sameSite: "lax",
       path: "/",
     });
     res
@@ -76,7 +76,7 @@ const login = async (req, res) => {
       httpOnly: true,
       secure: false,
       maxAge: maxAge * 1000,
-      sameSite: "lax", // Helps with CSRF protection
+      sameSite: "lax",
       path: "/",
     });
     res.status(200).json({
