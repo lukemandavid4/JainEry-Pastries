@@ -184,7 +184,7 @@ const Navbar: React.FC = () => {
           >
             <TiShoppingCart className="text-[1.5rem]" />
             <div className="absolute size-5 text-white rounded-[50%] flex items-center justify-center bg-[var(--color-three)] text-[0.8rem] font-bold top-[-0.5rem] right-[-0.1rem]">
-              4
+              1
             </div>
           </button>
           {!isAuthenticated && (
