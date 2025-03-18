@@ -8,6 +8,7 @@ import { useState, ChangeEvent, FormEvent, useEffect } from "react";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useCart } from "../cartContext/cartContext";
+import Cookies from 'js-cookie';
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -41,6 +42,15 @@ const Navbar: React.FC = () => {
     setRegister((prevRegister) => !prevRegister);
     if (login) setLogin(false);
   };
+
+  useEffect(() => {
+    setTimeout(()=>{
+        const token = Cookies.get('jwt');
+        if (token) {
+            setIsAuthenticated(true);
+        }
+    }, 10)
+}, []);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -114,7 +124,6 @@ const Navbar: React.FC = () => {
       if (response.status === 200) {
         setIsAuthenticated(true);
         setLogin(false);
-        // resetFormFields();
       } else {
         alert("Error, Invalid credentials. Please try again.");
       }
@@ -144,6 +153,11 @@ const Navbar: React.FC = () => {
     (e: ChangeEvent<HTMLInputElement>): void => {
       setter(e.target.value);
     };
+
+  const handleLogout = () => {
+    Cookies.remove('jwt');
+    setIsAuthenticated(false);
+  };
 
   return (
     <>

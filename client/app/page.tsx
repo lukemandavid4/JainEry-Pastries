@@ -8,8 +8,6 @@ import { TbClock24 } from "react-icons/tb";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import { items, BakeryItems } from "./ui/data/data";
 import { products, Products } from "./ui/data/data";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 
 export default function Home() {
   return (
