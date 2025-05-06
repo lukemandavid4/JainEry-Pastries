@@ -28,10 +28,10 @@ export default function Home() {
             <FaArrowRightLong className="text-[1.125rem] font-bold" />
           </Link>
         </div>
-        <div className="hidden lg:flex items-center lg:w-[5%] justify-center">
+        <div className="hidden lg:flex items-center lg:w-[7%] justify-center">
           <Image src="/home/line.svg" width={35} height={10} alt="line"></Image>
         </div>
-        <div className="lg:w-[45%] flex justify-center">
+        <div className="lg:w-[43%] flex justify-center">
           <Image
             src="/home/basket.png"
             width={500}
