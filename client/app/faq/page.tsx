@@ -17,46 +17,46 @@ const Page = () => {
   const faqData: faq[] = [
     {
       id: 1,
-      question: "What are some popular types of breads found in bakeries?",
+      question: "Do you offer cake delivery in Nairobi?",
       answer:
-        "The article discusses the most popular types of bread found in bakeries around the world, including sourdough, baguette, ciabatta, and rye bread. It also explores the history and characteristics of each type of bread, as well as suggestions for how to enjoy them.",
+        "You are in luck because Nairobi is our playground. You will get cakes delivered to your doorstep, same-day, next-day, or any day according to your schedule..",
     },
     {
       id: 2,
-      question: "What is the difference between a cake and a torte?",
+      question: "How long does it take to bake and deliver my cake?",
       answer:
-        "The difference between a cake and a torte, explaining that while both desserts are made with flour, sugar, and eggs, tortes are typically denser and richer due to the addition of ground nuts or breadcrumbs in the batter. The article also discusses the variations in ingredients and preparation methods between cakes and tortes, providing examples of each.",
+        "Experience the delight of freshly baked cakes delivered to your doorstep. While we accept urgent orders delivered within 4 hours, we recommend placing your order at least one day in advance. If same-day delivery is necessary, talk to us directly to confirm the feasibility of your request. We also request your understanding as it is subject to the volume of prior bookings.",
     },
     {
       id: 3,
-      question: "What are some common ingredients used in making cookies?",
+      question: "Do you bake healthy cakes?",
       answer:
-        "Some of the most common ingredients used in making cookies, such as flour, sugar, butter, eggs, and baking powder or soda. It also briefly discusses the role of each ingredient in creating the desired texture, flavor, and appearance of cookies, and provides tips for how to properly measure and mix the ingredients.",
+        "Your health comes first, and that is why we have healthy cake options. Sugar-free cakes for diabetics? Check. How about eggless cakes for those with protein allergies? We have them too. I have a confession to make. We are mostly a request-and-do bakery. Every cake we bake is made to your specification. If you have a cake idea you would like implemented, including a specific type of healthy cake, we are the bakery you turn to. Share your requirements and we will craft a delightful treat for your upcoming occasion.",
     },
     {
       id: 4,
       question:
-        "What is the origin of the bagel and how is it traditionally served?",
+        "What types of cakes do you bake?",
       answer:
-        "The bagel is believed to have originated in Poland in the early 17th century. It was traditionally a breakfast food for Jewish communities and was served with cream cheese, lox, or butter. Today, bagels are a popular type of bread that can be enjoyed at any time of day and are often served with a variety of toppings, such as smoked salmon, cream cheese, jam, or avocado. They are typically boiled and then baked to create their distinct chewy texture and golden brown exterior.",
+        "You think it, we bake it! Our talented pastry chefs will bring your imagination to reality. You will get cakes in any theme, flavor, and design. Birthday cakes? Check. Anniversary cakes? Check. Cupcakes? Check. Cake for kids? Why not? Baby showers and bridal shower cakes? You know we've got 'em. All types of cakes and pastries are available.",
     },
     {
       id: 5,
-      question: "What are some popular types of pastries found in bakeries?",
+      question: "Are all your cakes freshly baked?",
       answer:
-        "There are many popular types of pastries that can be found in bakeries, including croissants, danishes, éclairs, macarons, tarts, and turnovers. Croissants are flaky, buttery pastries that are often filled with chocolate or almond paste. Danishes are a type of sweet pastry that can be filled with fruit, cheese, or custard. Éclairs are cream-filled pastries that are often topped with chocolate ganache. Macarons are delicate, colorful French cookies made from almond flour and filled with buttercream or ganache. Tarts are open-faced pastries that can be filled with fruit, custard, or chocolate. Turnovers are a type of hand-held pastry that can be filled with sweet or savory ingredients, such as fruit, cheese, or meat.",
+        "We guarantee that every cake delivered to you is fresh from the oven. You will experience the moist, soft, and flavorful delights from the best cake shop in Nairobi, Kenya.",
     },
     {
       id: 6,
-      question: "How do you make a flaky pie crust?",
+      question: "What is the price of a 1kg cake at JainEry Pastry shop?",
       answer:
-        "To make a flaky pie crust, start by combining flour, salt, and sugar in a mixing bowl. Cut in cold butter and/or shortening until the mixture forms pea-sized pieces. Gradually add ice water and stir until the dough just comes together. Chill the dough in the refrigerator for at least 30 minutes before rolling it out on a floured surface. Fold the dough over and roll it out again several times to create layers, then transfer it to a pie dish and fill with desired filling before baking.",
+        "A simple 1kg cake costs KES 2500 at our cake shop. With some improvements in design, flavor, ingredients, and icing type, the price might increase. Not to worry though. We guarantee value for money. All this is to make your special occasion all glitters and fun.",
     },
     {
       id: 7,
-      question: "What are some common types of cakes found in bakeries?",
+      question: "Do you deliver surprise birthday cakes?",
       answer:
-        "Cakes are a popular bakery item with various types available, including chocolate, vanilla, red velvet, carrot, lemon, pound, and angel food cake. Each has its own unique flavor and texture, and may be topped with frosting or glaze.",
+        "Send the most thoughtful happy birthday wishes gesture by letting us deliver a unique surprise birthday cake and other gifts. We help you pick trending, fashionable, and reasonably priced gift packs accompanying a fresh and delicious birthday cake.",
     },
   ];
   return (

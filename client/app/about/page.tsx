@@ -49,22 +49,10 @@ const page = () => {
             We provide 100% halal bakery product.
           </h1>
           <p className="text-[1.125rem] text-[var(--color-four)]">
-            Netus et malesuada fames ac turpis. Rhoncus urna neque viverra justo
-            nec ultrices. Donec enim diam vulputate ut pharetra sit amet
-            aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida
-            cum sociis natoque. Bibendum enim facilisis gravida neque convallis
-            a cras semper auctor. Congue eu consequat ac felis donec et odio.
-            Cursus turpis massa tincidunt dui ut ornare lectus sit. Facilisi
-            cras fermentum odio eu feugiat. Feugiat sed lectus vestibulum mattis
-            ullamcorper velit sed ullamcorper. Erat velit scelerisque in dictum.
-            Sit amet est placerat in.
+          Welcome to JainEry, your new favorite place for indulgent, handcrafted pastries delivered straight to your doorstep! What started as a simple love for baking has grown into a full-fledged passion project dedicated to bringing joy, comfort, and sweetness into people&apos;s lives. Our journey began with a home oven, a few trusted family recipes, and a big dream: to share the magic of freshly baked goods with as many people as possible, no matter where they are. 
           </p>
           <p className="text-[1.125rem] text-[var(--color-four)]">
-            Netus et malesuada fames ac turpis. Rhoncus urna neque viverra justo
-            nec ultrices. Donec enim diam vulputate ut pharetra sit amet
-            aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida
-            cum sociis natoque. Bibendum enim facilisis gravida neque convallis
-            a cras semper auctor. Congue eu consequat ac felis donec et odio.
+          We&apos;re more than just a pastry shop, we&apos;re a modern, customer-focused bakery that blends tradition with convenience. Our online platform makes it easy for you to browse our menu, place orders, and get your goodies delivered fresh, without stepping out of your home. Whether you&apos;re treating yourself after a long day, sending a sweet gift to someone special, or planning a celebration, we&apos;re here to make it memorable and mouthwatering.Thank you for letting us be a part of your sweetest moments. 
           </p>
           <Link
             href="/shop"
@@ -84,13 +72,7 @@ const page = () => {
             Our Mission
           </h1>
           <span className="text-[var(--color-four)] text-[1.0625rem]">
-            Netus et malesuada fames ac turpis. Rhoncus urna neque viverra justo
-            nec ultrices. Donec enim diam vulputate ut pharetra sit amet
-            aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida
-            cum sociis natoque. Bibendum enim facilisis gravida neque convallis
-            a cras semper auctor. Congue eu consequat ac felis donec et odio.
-            Cursus turpis massa tincidunt dui ut ornare lectus sit. Facilisi
-            cras fermentum odio eu feugiat.
+          At JainEry, our mission is to spread happiness one bite at a time by offering an irresistible selection of freshly baked pastries, cookies, and cakes—all crafted with love and delivered with care. We are passionate about quality, using only the finest ingredients and traditional recipes with a modern twist to create treats that feel homemade and taste unforgettable. Through our user-friendly online platform, we aim to make every customer&apos;s experience as sweet and satisfying as the desserts we bake—convenient, reliable, and full of flavor. Whether it&apos;s a simple indulgence, a thoughtful gift, or a celebration, we are here to make life just a little sweeter.
           </span>
         </div>
         <div
@@ -101,13 +83,7 @@ const page = () => {
             Our Vision
           </h1>
           <span className="text-[var(--color-four)] text-[1.0625rem]">
-            Netus et malesuada fames ac turpis. Rhoncus urna neque viverra justo
-            nec ultrices. Donec enim diam vulputate ut pharetra sit amet
-            aliquam. Imperdiet nulla malesuada pellentesque elit eget gravida
-            cum sociis natoque. Bibendum enim facilisis gravida neque convallis
-            a cras semper auctor. Congue eu consequat ac felis donec et odio.
-            Cursus turpis massa tincidunt dui ut ornare lectus sit. Facilisi
-            cras fermentum odio eu feugiat.
+          Our vision is to become a leading online pastry shop that redefines the way people enjoy baked goods by blending tradition with innovation. We strive to build a trusted brand that customers can rely on for quality, creativity, and heartfelt service. In the coming years, we envision expanding our reach across the region and beyond, offering a wider variety of pastries and personalized creations to suit every taste, occasion, and dietary need. More than just a shop, we dream of being a beloved part of people&apos;s celebrations and everyday moments—spreading joy, one delicious order at a time.
           </span>
         </div>
       </div>

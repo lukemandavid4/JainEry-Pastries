@@ -5,8 +5,6 @@ import { items, BakeryItems } from "../ui/data/data";
 import { useCart } from "../ui/cartContext/cartContext";
 
 const Page = () => {
-  const { addToCart } = useCart();
-
   return (
     <>
       <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
@@ -34,7 +32,7 @@ const Page = () => {
             Special Bakery Products
           </h1>
         </div>
-        <div className="flex mt-[3rem] lg:mt-[5rem] flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
+        <div className="flex mt-[3rem] md:mt-[5rem] flex-col md:flex-row md:flex-wrap gap-[1.5rem]">
           {items.map((product: BakeryItems) => (
             <div
               key={product.id}
@@ -61,12 +59,10 @@ const Page = () => {
                   </span>
                 </div>
               </div>
-              <button
-                onClick={() => addToCart(product)}
-                className="bg-[var(--color-three)] text-[var(--color-white)] px-4 py-2 rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto"
-              >
+              <Link
+                href="" className="flex justify-center bg-[var(--color-three)] text-[var(--color-white)] w-[10rem] py-[0.5rem] rounded-[50vw] font-medium text-[1.1875rem] hover:bg-[var(--color-two)] [transition:background_0.3s,_bottom_0.3s,_opacity_0.3s] bottom-[1rem] left-[50%] translate-x-[-50%] absolute opacity-0 pointer-events-none group-hover:opacity-100 group-hover:bottom-[2rem] group-hover:pointer-events-auto">
                 Add to Cart
-              </button>
+              </Link>
             </div>
           ))}
         </div>
