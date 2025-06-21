@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@netlify/next": "^1.4.9",
     "axios": "^1.10.0",
     "js-cookie": "^3.0.5",
     "next": "15.3.4",

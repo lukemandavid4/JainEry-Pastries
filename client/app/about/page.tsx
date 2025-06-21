@@ -76,11 +76,8 @@ const page = () => {
           </Link>
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-[2rem] pb-[5rem]">
-        <div
-          className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem]"
-          style={{ flexBasis: "calc(50% - 20px)" }}
-        >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap pb-[5rem] justify-between space-y-4">
+        <div className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem] w-full md:w-[calc(50%-1rem)]">
           <h1 className="text-[2rem] font-bold text-[var(--color-two)]">
             Our Mission
           </h1>
@@ -98,10 +95,7 @@ const page = () => {
             sweeter.
           </span>
         </div>
-        <div
-          className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem]"
-          style={{ flexBasis: "calc(50% - 20px)" }}
-        >
+        <div className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem] w-full md:w-[calc(50%-1rem)]">
           <h1 className="text-[2rem] font-bold text-[var(--color-two)]">
             Our Vision
           </h1>
