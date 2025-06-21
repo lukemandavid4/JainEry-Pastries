@@ -9,25 +9,26 @@ import { chefs, People } from "../ui/data/data";
 const page = () => {
   return (
     <>
-      <div className="min-h-[15rem] md:min-h-[27.25rem] bg-[url('/about/background-jainery.png')] bg-[var(--color-five)] bg-cover px-[2rem] md:px-lr-custom flex items-center justify-center relative">
-        <h1 className="text-[var(--color-two)] text-[2.25rem] md:text-[4.25rem] lg:text-[4.7rem] font-bold">
-          About Us
-        </h1>
-        <div className="flex px-[1rem] py-[0.5rem] bg-[var(--color-three)] rounded-[50vw] gap-[0.4rem] font-medium absolute bottom-[-1rem]">
-          <Link
-            href="/"
-            className="hover:text-[var(--color-two)] text-[var(--color-white)] [transition:color_0.3s]"
-          >
-            Home
-          </Link>
-          <span className="text-[var(--color-white)]">&#47;&#47; About Us</span>
+      <div className="bg-[url('/about/background-jainery.png')] bg-[var(--color-five)]">
+        <div className="min-h-[15rem] md:min-h-[27.25rem] bg-cover max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center relative">
+          <h1 className="text-[var(--color-two)] text-[2.25rem] md:text-[4.25rem] lg:text-[4.7rem] font-bold">
+            About Us
+          </h1>
+          <div className="flex px-[1rem] py-[0.5rem] bg-[var(--color-three)] rounded-[50vw] gap-[0.4rem] font-medium absolute bottom-[-1rem]">
+            <Link
+              href="/"
+              className="hover:text-[var(--color-two)] text-[var(--color-white)] [transition:color_0.3s]"
+            >
+              Home
+            </Link>
+            <span className="text-[var(--color-white)]">
+              &#47;&#47; About Us
+            </span>
+          </div>
         </div>
       </div>
-      <div className="py-[5rem] lg:py-[10rem] px-[2rem] xl:px-lr-custom flex flex-col lg:flex-row gap-[4rem]">
-        <div
-          className="flex justify-center lg:justify-end"
-          style={{ flexBasis: "calc(50% - 20px)" }}
-        >
+      <div className="py-[5rem] lg:py-[10rem] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap justify-between">
+        <div className="flex justify-center w-[calc(50%-1rem)]">
           <Image
             src="/about/baker.png"
             width={450}
@@ -36,10 +37,7 @@ const page = () => {
             className="rounded-lg"
           ></Image>
         </div>
-        <div
-          style={{ flexBasis: "calc(50% - 20px)" }}
-          className="flex flex-col gap-[1.5rem]"
-        >
+        <div className="flex flex-col gap-[1.5rem] w-[calc(50%-1rem)]">
           <div>
             <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
               ABOUT US
@@ -78,7 +76,7 @@ const page = () => {
           </Link>
         </div>
       </div>
-      <div className="px-[2rem] xl:px-lr-custom flex flex-col lg:flex-row gap-[2rem] pb-[5rem]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row gap-[2rem] pb-[5rem]">
         <div
           className="bg-[var(--color-five)] px-[1.5rem] md:px-[2.5rem] py-[2rem] md:py-[3rem] rounded-[1rem] flex flex-col gap-[0.5rem] md:gap-[1.5rem]"
           style={{ flexBasis: "calc(50% - 20px)" }}
@@ -164,34 +162,35 @@ const page = () => {
           </div>
         </div>
       </div>
-      <div className="py-[3rem] lg:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)] px-[2rem] xl:px-lr-custom">
-        <div className="text-center">
-          <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
-            TEAM MEMBERS
-          </span>
-        </div>
-        <div className="text-center mt-[4rem] lg:mt-[2rem]">
-          <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold">
-            Our Expert Chef
-          </h1>
-        </div>
-        <div className="flex flex-col md:flex-row gap-[1.5rem] my-[2rem] md:my-[5rem]">
-          {chefs.map((chef: People) => (
-            <div
-              key={chef.id}
-              className="min-h-[22.875rem] shadow-sm rounded-[0.5rem] bg-[var(--color-white)] p-[1rem] text-center"
-              style={{ flexBasis: "calc(25% - 10px)" }}
-            >
+      <div className="lg:min-h-screen py-[3rem] lg:py-[7.5rem] bg-[linear-gradient(#fff5ed,_#fff)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <span className="text-[var(--color-three)] font-medium text-[0.8rem] md:text-[0.9rem] tracking-[2px] px-[1rem] py-[0.5rem] bg-[var(--color-white)] rounded-[50vw] shadow-md">
+              TEAM MEMBERS
+            </span>
+          </div>
+          <div className="text-center mt-[4rem] lg:mt-[2rem]">
+            <h1 className="text-[1.75rem] md:text-[3rem] text-[var(--color-two)] font-bold">
+              Our Expert Chef
+            </h1>
+          </div>
+          <div className="flex flex-wrap my-[2rem] md:my-[5rem] justify-between space-y-4">
+            {chefs.map((chef: People) => (
               <div
-                className="min-h-[14.125rem] 2sm:min-h-[25.125rem] md:min-h-[14.125rem] bg-center bg-cover rounded-[0.5rem]"
-                style={{ backgroundImage: `url(${chef.image})` }}
-              ></div>
-              <h1 className="text-[1.25rem] text-[var(--color-two)] font-semibold mt-[2.5rem]">
-                {chef.name}
-              </h1>
-              <p className="text-[var(--color-four)]">{chef.role}</p>
-            </div>
-          ))}
+                key={chef.id}
+                className="min-h-[22.875rem] shadow-sm rounded-[0.5rem] bg-[var(--color-white)] p-[1rem] text-center w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1rem)]"
+              >
+                <div
+                  className="min-h-[14.125rem] 2sm:min-h-[25.125rem] md:min-h-[14.125rem] bg-center bg-cover rounded-[0.5rem]"
+                  style={{ backgroundImage: `url(${chef.image})` }}
+                ></div>
+                <h1 className="text-[1.25rem] text-[var(--color-two)] font-semibold mt-[2.5rem]">
+                  {chef.name}
+                </h1>
+                <p className="text-[var(--color-four)]">{chef.role}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>

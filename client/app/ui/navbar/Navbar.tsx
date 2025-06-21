@@ -25,6 +25,14 @@ const Navbar: React.FC = () => {
   const [generalError, setGeneralError] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+  interface AxiosErrorResponse {
+    response?: {
+      data?: {
+        message?: string;
+      };
+    };
+  }
+
   const handleToggleMenu = (): void => {
     setOpen((prevOpen) => !prevOpen);
   };
@@ -88,7 +96,7 @@ const Navbar: React.FC = () => {
       }
     } catch (error: unknown) {
       if (typeof error === "object" && error !== null && "response" in error) {
-        const response = (error as { response: any }).response;
+        const response = (error as AxiosErrorResponse).response;
         if (response && response.data) {
           const errorMessage = response.data.message;
           if (typeof errorMessage === "string") {
@@ -129,7 +137,7 @@ const Navbar: React.FC = () => {
       }
     } catch (error: unknown) {
       if (typeof error === "object" && error !== null && "response" in error) {
-        const response = (error as { response: any }).response;
+        const response = (error as AxiosErrorResponse).response;
         if (response && response.data) {
           const errorMessage = response.data.message;
           if (typeof errorMessage === "string") {
@@ -154,10 +162,10 @@ const Navbar: React.FC = () => {
       setter(e.target.value);
     };
 
-  const handleLogout = () => {
-    Cookies.remove("jwt");
-    setIsAuthenticated(false);
-  };
+  // const handleLogout = () => {
+  //   Cookies.remove("jwt");
+  //   setIsAuthenticated(false);
+  // };
 
   return (
     <>
